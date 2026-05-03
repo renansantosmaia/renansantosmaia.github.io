@@ -6,7 +6,7 @@
 <title>Renan Santos Maia — Civil Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,900;1,300;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 /* ══════════════════════════════════════
    TOKENS
@@ -1680,6 +1680,17 @@ h2.contact-heading {
 </script>
    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+   <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
       if (!user) {
