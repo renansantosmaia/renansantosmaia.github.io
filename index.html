@@ -8,1039 +8,282 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,900;1,300;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
-/* ══════════════════════════════════════
-   TOKENS
-══════════════════════════════════════ */
 :root {
-  --ink:       #0a0a0a;
-  --ink2:      #1a1a1a;
-  --ink3:      #2e2e2e;
-  --rule:      #d0ccc4;
-  --rule2:     #e8e4de;
-  --paper:     #f5f2ed;
-  --paper2:    #ede9e2;
-  --muted:     #7a7670;
-  --accent:    #C8102E;
-  --accent2:   #a00c24;
-  --white:     #ffffff;
-
-  --display:   'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --serif:     'Libre Baskerville', Georgia, serif;
-  --mono:      'DM Mono', 'Courier New', monospace;
+  --blue-deep:  #13294B;
+  --blue-mid:   #1e3f72;
+  --blue-light: #2a5298;
+  --blue-muted: #1c3560;
+  --blue-bd:    #243f6a;
+  --gold:       #9d7c1a;
+  --gold-lt:    #b8941f;
+  --gold-dim:   #6d5812;
+  --paper:      #f5f2ed;
+  --paper2:     #ede9e2;
+  --paper3:     #e4dfd6;
+  --paper4:     #fafaf8;
+  --ink:        #1a1a1a;
+  --ink2:       #2e2e2e;
+  --muted:      #6b6660;
+  --rule:       #d4cfc8;
+  --white:      #ffffff;
+  --display:    'Barlow Condensed','Arial Narrow',sans-serif;
+  --serif:      'Libre Baskerville',Georgia,serif;
+  --mono:       'DM Mono','Courier New',monospace;
 }
 
-/* ══════════════════════════════════════
-   RESET
-══════════════════════════════════════ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--serif);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-img { max-width: 100%; display: block; }
-a { color: inherit; text-decoration: none; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.65;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--blue-deep);}
+::-webkit-scrollbar-thumb{background:var(--gold);}
 
-::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: var(--paper); }
-::-webkit-scrollbar-thumb { background: var(--accent); }
+.container{max-width:1240px;margin:0 auto;padding:0 3rem;}
+.tag{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.08em;text-transform:uppercase;border:1px solid var(--gold-dim);padding:0.2rem 0.55rem;color:var(--gold-dim);display:inline-block;background:rgba(157,124,26,0.05);}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.fade-up.vis{opacity:1;transform:none;}
 
-/* ══════════════════════════════════════
-   UTILITY
-══════════════════════════════════════ */
-.container { max-width: 1280px; margin: 0 auto; padding: 0 3rem; }
-.label {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.label-accent { color: var(--accent); }
-.rule { width: 100%; height: 1px; background: var(--rule); }
-.rule-heavy { width: 100%; height: 3px; background: var(--ink); }
-.rule-accent { width: 100%; height: 2px; background: var(--accent); }
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--blue-deep);border-bottom:3px solid var(--gold);}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 3rem;}
+.nav-logo{font-family:var(--display);font-size:1.1rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);transition:all 0.25s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-lang{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.15);padding:0.25rem 0.65rem;transition:all 0.25s;}
+.nav-lang:hover{color:var(--white);border-color:var(--gold);}
 
-.tag-pill {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1px solid var(--rule);
-  padding: 0.2rem 0.55rem;
-  color: var(--muted);
-  display: inline-block;
-}
+/* HERO */
+#hero{background:var(--blue-deep);padding:9rem 0 0;overflow:hidden;position:relative;}
+#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;opacity:0.5;}
+#hero::after{content:'';position:absolute;top:0;left:0;right:0;height:100%;background:radial-gradient(circle at 20% 50%,rgba(157,124,26,0.08) 0%,transparent 50%);pointer-events:none;}
 
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.fade-up.vis { opacity: 1; transform: none; }
+.hero-masthead{max-width:1240px;margin:0 auto;padding:0 3rem 1.5rem;border-bottom:1px solid rgba(157,124,26,0.2);display:flex;align-items:flex-end;justify-content:space-between;position:relative;z-index:1;}
+.hero-issue{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.3);line-height:2;}
+.hero-issue em{color:var(--gold);font-style:normal;font-weight:500;}
+.hero-social{display:flex;gap:1.5rem;}
+.hero-social a{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);transition:all 0.25s;}
+.hero-social a:hover{color:var(--gold);}
 
-/* ══════════════════════════════════════
-   NAV
-══════════════════════════════════════ */
-#nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: var(--ink);
-  border-bottom: 2px solid var(--accent);
-}
-.nav-inner {
-  max-width: 1280px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0.9rem 3rem;
-}
-.nav-logo {
-  font-family: var(--display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--white);
-}
-.nav-logo span { color: var(--accent); }
-.nav-links {
-  display: flex; gap: 2.5rem; list-style: none;
-}
-.nav-links a {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--accent); }
-.nav-lang {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 0.25rem 0.65rem;
-  transition: all 0.2s;
-}
-.nav-lang:hover { color: var(--white); border-color: var(--accent); }
+.hero-main{max-width:1240px;margin:0 auto;padding:2.5rem 3rem 0;display:grid;grid-template-columns:1fr 340px;gap:4rem;align-items:end;position:relative;z-index:1;}
 
-/* ══════════════════════════════════════
-   HERO
-══════════════════════════════════════ */
-#hero {
-  background: var(--ink);
-  padding: 9rem 0 0;
-  overflow: hidden;
-  position: relative;
-}
+h1.hero-name{font-family:var(--display);font-size:clamp(5rem,10.5vw,12.5rem);font-weight:900;line-height:0.87;letter-spacing:-0.015em;text-transform:uppercase;color:var(--white);}
+h1.hero-name .gold{color:var(--gold);}
+h1.hero-name .dim{font-style:italic;font-weight:300;color:rgba(255,255,255,0.15);font-size:0.52em;display:block;letter-spacing:0.02em;margin-top:0.2rem;}
 
-.hero-masthead {
-  max-width: 1280px; margin: 0 auto; padding: 0 3rem;
-  border-bottom: 1px solid var(--ink3);
-  padding-bottom: 2rem;
-  display: flex; align-items: flex-end; justify-content: space-between;
-}
+.hero-descriptor{margin-top:2.2rem;padding-top:1.8rem;border-top:1px solid rgba(157,124,26,0.2);display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:start;}
+.hero-tagline{font-family:var(--serif);font-size:1rem;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.8;max-width:420px;}
+.hero-facts{display:flex;flex-direction:column;gap:0.6rem;}
+.hero-fact{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:0.6rem;font-weight:500;}
+.hero-fact::before{content:'';display:inline-block;width:16px;height:1px;background:var(--gold);flex-shrink:0;}
 
-.hero-issue {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
-  line-height: 2;
-}
-.hero-issue em { color: var(--accent); font-style: normal; }
+.hero-right{display:flex;flex-direction:column;gap:0.9rem;padding-top:0.5rem;}
+.hero-badge{background:rgba(157,124,26,0.08);border:1px solid rgba(157,124,26,0.25);padding:1.1rem 1.3rem;backdrop-filter:blur(8px);}
+.hero-badge-label{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:0.4rem;font-weight:500;}
+.hero-badge-value{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--white);line-height:1.15;}
 
-.hero-social {
-  display: flex; gap: 1.5rem;
-}
-.hero-social a {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.35);
-  transition: color 0.2s;
-}
-.hero-social a:hover { color: var(--accent); }
+.hero-stats-bar{background:linear-gradient(135deg,var(--gold) 0%,#a88324 100%);margin-top:3rem;box-shadow:0 4px 20px rgba(157,124,26,0.25);}
+.hero-stats-inner{max-width:1240px;margin:0 auto;padding:0 3rem;display:grid;grid-template-columns:repeat(4,1fr);}
+.hero-stat{padding:1.5rem 0 1.5rem 1.8rem;border-right:1px solid rgba(19,41,75,0.15);}
+.hero-stat:first-child{padding-left:0;}
+.hero-stat:last-child{border-right:none;}
+.hero-stat-num{font-family:var(--display);font-size:2.8rem;font-weight:900;color:var(--blue-deep);line-height:1;}
+.hero-stat-label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(19,41,75,0.7);margin-top:0.3rem;font-weight:500;}
 
-.hero-main {
-  max-width: 1280px; margin: 0 auto; padding: 3rem 3rem 0;
-  display: grid; grid-template-columns: 1fr auto;
-  gap: 2rem; align-items: end;
-}
+/* SECTIONS */
+.sw{padding:6.5rem 0;}
+.sw.dark{background:var(--blue-deep);}
+.sw.mid{background:var(--paper2);}
 
-.hero-name-block {}
+.sh{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;margin-bottom:4rem;}
+.sn{font-family:var(--display);font-size:4.5rem;font-weight:900;line-height:1;color:var(--paper3);letter-spacing:-0.02em;}
+.sn.lt{color:rgba(157,124,26,0.2);}
 
-h1.hero-name {
-  font-family: var(--display);
-  font-size: clamp(5.5rem, 11vw, 13rem);
-  font-weight: 900;
-  line-height: 0.88;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-  color: var(--white);
-}
-h1.hero-name .accent-line { color: var(--accent); }
-h1.hero-name .italic-line {
-  font-style: italic;
-  font-weight: 300;
-  color: rgba(255,255,255,0.35);
-  display: block;
-  font-size: 0.55em;
-}
+h2.st{font-family:var(--display);font-size:clamp(2rem,3.5vw,3.5rem);font-weight:700;text-transform:uppercase;letter-spacing:0.02em;line-height:1.1;color:var(--ink);}
+h2.st.lt{color:var(--white);}
 
-.hero-descriptor {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--ink3);
-  display: flex; gap: 3rem; align-items: flex-start;
-}
-.hero-tagline {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.5);
-  max-width: 460px;
-  line-height: 1.65;
-}
-.hero-facts {
-  display: flex; flex-direction: column; gap: 0.5rem;
-  flex-shrink: 0;
-}
-.hero-fact {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  display: flex; align-items: center; gap: 0.6rem;
-}
-.hero-fact::before {
-  content: '';
-  display: inline-block;
-  width: 16px; height: 1px;
-  background: var(--accent);
-  flex-shrink: 0;
-}
+.ss{font-family:var(--mono);font-size:0.57rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:2;}
+.ss.lt{color:rgba(255,255,255,0.35);}
 
-.hero-stats-bar {
-  background: var(--accent);
-  margin-top: 3rem;
-}
-.hero-stats-inner {
-  max-width: 1280px; margin: 0 auto; padding: 0 3rem;
-  display: grid; grid-template-columns: repeat(4, 1fr);
-}
-.hero-stat {
-  padding: 1.4rem 0;
-  border-right: 1px solid rgba(255,255,255,0.2);
-  padding-left: 2rem;
-}
-.hero-stat:first-child { padding-left: 0; }
-.hero-stat:last-child { border-right: none; }
-.hero-stat-num {
-  font-family: var(--display);
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: var(--white);
-  line-height: 1;
-}
-.hero-stat-label {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.65);
-  margin-top: 0.2rem;
-}
+.sr{width:100%;height:1px;background:var(--rule);margin-bottom:4rem;}
+.sr.lt{background:rgba(157,124,26,0.2);}
 
-/* ══════════════════════════════════════
-   SECTION HEADERS
-══════════════════════════════════════ */
-.section-header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-}
-.section-num {
-  font-family: var(--display);
-  font-size: 5rem;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--rule2);
-  letter-spacing: -0.02em;
-}
-h2.section-title {
-  font-family: var(--display);
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  color: var(--ink);
-}
-.section-title-label {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-align: right;
-  line-height: 1.8;
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:4.5rem;align-items:start;}
+.about-lede{font-family:var(--display);font-size:clamp(1.5rem,2.2vw,2rem);font-weight:600;font-style:italic;line-height:1.35;color:var(--ink);margin-bottom:2rem;padding-bottom:1.8rem;border-bottom:1px solid var(--rule);}
+.about-lede strong{font-style:normal;color:var(--blue-deep);font-weight:700;}
+.about-lede .gld{color:var(--gold-dim);}
+
+.about-body p{font-size:0.96rem;color:var(--ink2);margin-bottom:1.2rem;line-height:1.85;}
+
+.sc{background:var(--blue-deep);color:var(--white);padding:1.7rem;margin-bottom:1rem;}
+.sc-label{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(157,124,26,0.25);font-weight:500;}
+.sc-item{font-family:var(--serif);font-size:0.87rem;color:rgba(255,255,255,0.6);line-height:1.65;}
+.sc-item strong{color:var(--white);display:block;font-family:var(--display);font-size:0.9rem;margin-bottom:0.2rem;}
+
+/* EXPERIENCE */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(157,124,26,0.2);border:1px solid rgba(157,124,26,0.2);}
+.exp-card{background:var(--blue-muted);padding:3rem;position:relative;overflow:hidden;transition:all 0.3s ease;}
+.exp-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:0;background:var(--gold);transition:height 0.4s cubic-bezier(0.34,1.56,0.64,1);}
+.exp-card:hover{background:var(--blue-mid);}
+.exp-card:hover::before{height:100%;}
+
+.exp-type{font-family:var(--mono);font-size:0.57rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:0.6rem;font-weight:500;}
+.exp-period{font-family:var(--mono);font-size:0.57rem;color:rgba(255,255,255,0.25);float:right;margin-top:-1.5rem;}
+
+h3.exp-title{font-family:var(--display);font-size:1.85rem;font-weight:700;text-transform:uppercase;color:var(--white);line-height:1.05;margin-bottom:0.3rem;}
+.exp-co{font-family:var(--serif);font-size:0.86rem;font-style:italic;color:rgba(255,255,255,0.45);margin-bottom:1.4rem;}
+.exp-sum{font-size:0.87rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:1.4rem;}
+
+.exp-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.exp-list li{font-size:0.83rem;color:rgba(255,255,255,0.5);padding-left:1.2rem;position:relative;line-height:1.65;}
+.exp-list li::before{content:'—';position:absolute;left:0;color:var(--gold-lt);font-family:var(--mono);font-size:0.7rem;}
+
+/* RESEARCH */
+.research-list{border-top:2px solid var(--ink);}
+.research-row{display:grid;grid-template-columns:72px 1fr;border-bottom:1px solid var(--rule);transition:all 0.2s;background:transparent;}
+.research-row:nth-child(even){background:rgba(157,124,26,0.02);}
+.research-row:hover{background:rgba(157,124,26,0.06);}
+
+.research-idx{padding:2.8rem 1.2rem 2.8rem 0;border-right:1px solid var(--rule);display:flex;align-items:flex-start;justify-content:flex-end;}
+.research-idx span{font-family:var(--display);font-size:3.2rem;font-weight:900;color:var(--paper3);line-height:1;}
+
+.research-body{padding:2.8rem 0 2.8rem 2.2rem;}
+.research-meta{display:flex;align-items:center;gap:1rem;margin-bottom:0.7rem;flex-wrap:wrap;}
+.rc{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dim);font-weight:500;}
+.rp,.rt{font-family:var(--mono);font-size:0.55rem;color:var(--muted);}
+
+h3.research-title{font-family:var(--display);font-size:1.7rem;font-weight:700;text-transform:uppercase;color:var(--ink);line-height:1.1;margin-bottom:0.8rem;}
+.research-sum{font-size:0.88rem;color:var(--ink2);line-height:1.8;max-width:72ch;margin-bottom:1rem;}
+
+.ro{font-size:0.81rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.6;margin-bottom:0.4rem;}
+.ro::before{content:'→';position:absolute;left:0;color:var(--gold);font-family:var(--mono);font-size:0.68rem;font-weight:500;}
+
+.rtags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1rem;}
+
+/* TEACHING */
+.teaching-intro{font-family:var(--display);font-size:clamp(1.3rem,1.9vw,1.75rem);font-weight:300;font-style:italic;color:rgba(255,255,255,0.65);max-width:68ch;line-height:1.45;margin-bottom:3rem;}
+
+.teaching-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.tc{background:rgba(255,255,255,0.07);border:1px solid rgba(157,124,26,0.2);padding:2.2rem;transition:all 0.25s;}
+.tc:hover{background:rgba(255,255,255,0.1);border-color:rgba(157,124,26,0.3);}
+
+.tc-role{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;font-weight:500;}
+.tc-code{font-family:var(--display);font-size:2.8rem;font-weight:900;color:rgba(157,124,26,0.15);line-height:1;float:right;margin-top:-0.4rem;}
+
+h3.tc-course{font-family:var(--display);font-size:1.45rem;font-weight:700;text-transform:uppercase;color:var(--white);line-height:1.15;margin-bottom:0.3rem;clear:right;}
+.tc-inst{font-family:var(--mono);font-size:0.57rem;color:var(--gold-lt);letter-spacing:0.1em;margin-bottom:1rem;font-weight:500;}
+.tc-sum{font-size:0.87rem;color:rgba(255,255,255,0.55);line-height:1.7;}
+
+/* PULLQUOTE */
+.pq-wrap{background:var(--paper2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:5rem 0;}
+
+.pq{max-width:820px;margin:0 auto;text-align:center;padding:0 3rem;}
+.pq-mark{font-family:var(--display);font-size:5.5rem;font-weight:900;color:var(--gold);line-height:0.4;display:block;margin-bottom:1.2rem;opacity:0.8;}
+.pq-text{font-family:var(--display);font-size:clamp(1.6rem,2.8vw,2.7rem);font-weight:600;font-style:italic;color:var(--blue-deep);line-height:1.3;}
+.pq-attr{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:1.6rem;font-weight:500;}
+
+/* CONFERENCES */
+.conf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.conf-card{border:1px solid var(--rule);background:var(--white);overflow:hidden;transition:all 0.3s ease;}
+.conf-card:hover{box-shadow:0 8px 32px rgba(19,41,75,0.12);transform:translateY(-4px);}
+
+.conf-prev{aspect-ratio:4/3;background:linear-gradient(135deg,var(--paper2) 0%,var(--paper3) 100%);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--rule);position:relative;}
+.conf-ph{display:flex;flex-direction:column;align-items:center;gap:0.6rem;}
+.conf-ph-icon{font-family:var(--display);font-size:3.2rem;font-weight:900;color:var(--paper3);line-height:1;}
+.conf-bdg{position:absolute;top:0.8rem;right:0.8rem;background:var(--blue-deep);font-family:var(--mono);font-size:0.51rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-lt);padding:0.25rem 0.6rem;font-weight:500;}
+
+.conf-body{padding:1.4rem;}
+.conf-ev{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.4rem;font-weight:500;}
+h3.conf-title{font-family:var(--display);font-size:1.15rem;font-weight:700;text-transform:uppercase;color:var(--ink);line-height:1.25;margin-bottom:0.5rem;}
+.conf-meta{font-family:var(--mono);font-size:0.55rem;color:var(--muted);margin-bottom:0.7rem;}
+.conf-desc{font-size:0.81rem;color:var(--ink2);line-height:1.65;}
+
+/* PUBLICATIONS */
+.pub-feat{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(157,124,26,0.2);border:1px solid rgba(157,124,26,0.2);margin-bottom:3rem;}
+.pfc{background:var(--blue-muted);padding:2.2rem;transition:all 0.25s;}
+.pfc:hover{background:var(--blue-mid);}
+
+.pfc-label{font-family:var(--mono);font-size:0.53rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:0.9rem;font-weight:500;}
+.pfc-title{font-family:var(--display);font-size:1.25rem;font-weight:600;color:var(--white);line-height:1.3;margin-bottom:0.6rem;}
+.pfc-auth{font-size:0.77rem;font-style:italic;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;line-height:1.6;}
+.pfc-venue{font-family:var(--mono);font-size:0.57rem;color:rgba(255,255,255,0.3);}
+
+.pdoi{display:inline-block;margin-top:0.9rem;font-family:var(--mono);font-size:0.56rem;letter-spacing:0.1em;color:var(--gold-lt);border-bottom:1px solid rgba(157,124,26,0.4);padding-bottom:0.15rem;transition:all 0.2s;}
+.pdoi:hover{border-color:var(--gold-lt);}
+
+.pub-all-hd{font-family:var(--mono);font-size:0.57rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid rgba(157,124,26,0.2);font-weight:500;}
+
+.pub-list{border-top:1px solid rgba(157,124,26,0.2);}
+.pub-row{display:grid;grid-template-columns:2.8rem 1fr auto;gap:1.2rem;align-items:start;padding:1.2rem 0;border-bottom:1px solid rgba(157,124,26,0.15);transition:all 0.15s;}
+.pub-row:hover{background:rgba(255,255,255,0.02);padding-left:0.5rem;}
+
+.prn{font-family:var(--display);font-size:1.8rem;font-weight:900;color:rgba(157,124,26,0.25);line-height:1;text-align:right;}
+.prt{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.55;}
+.prv{font-family:var(--mono);font-size:0.55rem;color:rgba(255,255,255,0.3);margin-top:0.3rem;font-style:italic;}
+.pry{font-family:var(--display);font-size:1.3rem;font-weight:700;color:rgba(157,124,26,0.3);white-space:nowrap;align-self:center;}
+
+/* PERSONAL */
+.personal-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:4.5rem;align-items:start;}
+.personal-lede{font-family:var(--display);font-size:clamp(1.5rem,2.2vw,2.1rem);font-weight:600;line-height:1.3;color:var(--ink);margin-bottom:2rem;padding-bottom:1.8rem;border-bottom:1px solid var(--rule);}
+.personal-lede em{color:var(--gold-dim);}
+
+.personal-body p{font-size:0.96rem;color:var(--ink2);margin-bottom:1.2rem;line-height:1.85;}
+
+.pf{border-left:3px solid var(--gold);padding:1rem 1.2rem;background:var(--paper4);margin-bottom:0.9rem;}
+.pf-label{font-family:var(--mono);font-size:0.53rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:0.3rem;font-weight:500;}
+.pf-val{font-family:var(--display);font-size:1.05rem;font-weight:600;color:var(--blue-deep);}
+
+/* CONTACT */
+.cw{background:var(--blue-deep);padding:7rem 0 5rem;border-top:3px solid var(--gold);}
+.ci{text-align:center;max-width:700px;margin:0 auto;padding:0 3rem;}
+.c-pre{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:1.2rem;font-weight:500;}
+
+h2.c-head{font-family:var(--display);font-size:clamp(3rem,6vw,6.2rem);font-weight:900;text-transform:uppercase;color:var(--white);line-height:0.92;margin-bottom:2.2rem;}
+.c-sub{font-family:var(--serif);font-style:italic;font-size:0.97rem;color:rgba(255,255,255,0.4);margin-bottom:2.8rem;line-height:1.7;}
+
+.c-email{display:inline-block;background:linear-gradient(135deg,var(--gold) 0%,#a88324 100%);font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue-deep);font-weight:600;padding:1.1rem 2.8rem;margin-bottom:2.8rem;transition:all 0.25s;box-shadow:0 4px 16px rgba(157,124,26,0.25);}
+.c-email:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(157,124,26,0.35);}
+
+.c-links{display:flex;flex-wrap:wrap;justify-content:center;gap:1.1rem;margin-bottom:3.5rem;}
+.c-link{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);border:1px solid rgba(157,124,26,0.3);padding:0.65rem 1.3rem;transition:all 0.25s;font-weight:500;}
+.c-link:hover{color:var(--gold-lt);border-color:var(--gold-lt);background:rgba(157,124,26,0.1);}
+
+.c-foot{font-family:var(--mono);font-size:0.53rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);border-top:1px solid rgba(157,124,26,0.2);padding-top:2rem;}
+.c-foot a{color:var(--gold-lt);transition:color 0.2s;}
+.c-foot a:hover{color:var(--white);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .container{padding:0 2rem;}
+  .nav-inner{padding:0.9rem 2rem;}
+  .hero-main{grid-template-columns:1fr;gap:3rem;}
+  .hero-right{flex-direction:row;flex-wrap:wrap;}
+  .about-grid,.personal-grid{grid-template-columns:1fr;gap:3rem;}
+  .exp-grid,.pub-feat{grid-template-columns:1fr;}
+  .conf-grid,.teaching-grid{grid-template-columns:1fr 1fr;}
 }
 
-/* ══════════════════════════════════════
-   ABOUT
-══════════════════════════════════════ */
-#about {
-  padding: 6rem 0;
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 5fr 3fr;
-  gap: 5rem;
-  align-items: start;
-}
-.about-lede {
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.35;
-  color: var(--ink);
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--rule);
-}
-.about-lede strong {
-  font-weight: 700;
-  font-style: normal;
-}
-.about-body p {
-  font-size: 0.98rem;
-  color: var(--ink3);
-  margin-bottom: 1.1rem;
-  line-height: 1.75;
-}
-.about-sidebar {}
-.sidebar-card {
-  background: var(--ink);
-  color: var(--white);
-  padding: 2rem;
-  margin-bottom: 1.5rem;
-}
-.sidebar-card-label {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1rem;
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid var(--ink3);
-}
-.sidebar-card-item {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.9;
-}
-.sidebar-card-item strong { color: var(--white); display: block; }
-
-/* ══════════════════════════════════════
-   EXPERIENCE (INDUSTRY)
-══════════════════════════════════════ */
-#experience {
-  background: var(--ink);
-  padding: 6rem 0;
-}
-#experience h2.section-title { color: var(--white); }
-#experience .section-num { color: var(--ink3); }
-#experience .section-title-label { color: rgba(255,255,255,0.25); }
-
-.exp-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5px;
-  background: var(--ink3);
-  border: 1.5px solid var(--ink3);
-}
-.exp-card {
-  background: var(--ink2);
-  padding: 3rem;
-  position: relative;
-  overflow: hidden;
-  transition: background 0.25s;
-}
-.exp-card::after {
-  content: '';
-  position: absolute; top: 0; left: 0;
-  width: 3px; height: 0;
-  background: var(--accent);
-  transition: height 0.4s ease;
-}
-.exp-card:hover { background: var(--ink3); }
-.exp-card:hover::after { height: 100%; }
-
-.exp-type {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.6rem;
-}
-.exp-period {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: rgba(255,255,255,0.3);
-  float: right;
-  margin-top: -1.4rem;
-}
-h3.exp-title {
-  font-family: var(--display);
-  font-size: 1.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 0.3rem;
-}
-.exp-company {
-  font-family: var(--serif);
-  font-size: 0.9rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.45);
-  margin-bottom: 1.4rem;
-}
-.exp-summary {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.7;
-  margin-bottom: 1.4rem;
-}
-.exp-highlights {
-  list-style: none;
-  display: flex; flex-direction: column; gap: 0.5rem;
-}
-.exp-highlights li {
-  font-size: 0.83rem;
-  color: rgba(255,255,255,0.5);
-  padding-left: 1.2rem;
-  position: relative;
-  line-height: 1.55;
-}
-.exp-highlights li::before {
-  content: '—';
-  position: absolute; left: 0;
-  color: var(--accent);
-  font-family: var(--mono);
-}
-
-/* ══════════════════════════════════════
-   RESEARCH
-══════════════════════════════════════ */
-#research {
-  padding: 6rem 0;
-}
-.research-list {
-  display: flex; flex-direction: column;
-  border-top: 3px solid var(--ink);
-}
-.research-item {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  border-bottom: 1px solid var(--rule);
-  transition: background 0.2s;
-  cursor: default;
-}
-.research-item:hover { background: var(--paper2); }
-.research-index {
-  padding: 2.5rem 1rem 2.5rem 0;
-  border-right: 1px solid var(--rule);
-  display: flex; align-items: flex-start; justify-content: flex-end;
-}
-.research-index span {
-  font-family: var(--display);
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: var(--rule2);
-  line-height: 1;
-}
-.research-body {
-  padding: 2.5rem 0 2.5rem 2rem;
-}
-.research-meta {
-  display: flex; align-items: center; gap: 1rem;
-  margin-bottom: 0.7rem;
-  flex-wrap: wrap;
-}
-.research-client {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.research-period {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: var(--muted);
-}
-.research-type {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: var(--muted);
-}
-h3.research-title {
-  font-family: var(--display);
-  font-size: 1.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--ink);
-  line-height: 1.1;
-  margin-bottom: 0.8rem;
-}
-.research-summary {
-  font-size: 0.9rem;
-  color: var(--ink3);
-  line-height: 1.7;
-  max-width: 72ch;
-  margin-bottom: 1rem;
-}
-.research-outcomes {
-  display: flex; flex-direction: column; gap: 0.3rem;
-  margin-bottom: 1rem;
-}
-.research-outcome {
-  font-size: 0.82rem;
-  color: var(--muted);
-  padding-left: 1rem;
-  position: relative;
-  line-height: 1.5;
-}
-.research-outcome::before {
-  content: '→';
-  position: absolute; left: 0;
-  color: var(--accent);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-}
-.research-tags {
-  display: flex; flex-wrap: wrap; gap: 0.4rem;
-  margin-top: 0.8rem;
-}
-
-/* ══════════════════════════════════════
-   TEACHING
-══════════════════════════════════════ */
-#teaching {
-  background: var(--accent);
-  padding: 6rem 0;
-}
-#teaching h2.section-title { color: var(--white); }
-#teaching .section-num { color: rgba(255,255,255,0.15); }
-#teaching .section-title-label { color: rgba(255,255,255,0.5); }
-
-.teaching-intro {
-  font-family: var(--display);
-  font-size: clamp(1.4rem, 2vw, 1.9rem);
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(255,255,255,0.75);
-  max-width: 70ch;
-  line-height: 1.4;
-  margin-bottom: 3rem;
-}
-.teaching-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-}
-.teaching-card {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 2rem;
-  backdrop-filter: blur(4px);
-  transition: background 0.2s;
-}
-.teaching-card:hover { background: rgba(255,255,255,0.18); }
-.teaching-role {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 0.5rem;
-}
-.teaching-code {
-  font-family: var(--display);
-  font-size: 3rem;
-  font-weight: 900;
-  color: rgba(255,255,255,0.2);
-  line-height: 1;
-  float: right;
-  margin-top: -0.5rem;
-}
-h3.teaching-course {
-  font-family: var(--display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 1.15;
-  margin-bottom: 0.3rem;
-  clear: right;
-}
-.teaching-institution {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.08em;
-  margin-bottom: 1rem;
-}
-.teaching-summary {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.65;
-}
-
-/* ══════════════════════════════════════
-   PHILOSOPHY PULLQUOTE
-══════════════════════════════════════ */
-.pullquote-section {
-  padding: 5rem 0;
-  background: var(--paper2);
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-.pullquote {
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 3rem;
-}
-.pullquote-mark {
-  font-family: var(--display);
-  font-size: 6rem;
-  font-weight: 900;
-  color: var(--accent);
-  line-height: 0.5;
-  display: block;
-  margin-bottom: 1rem;
-}
-.pullquote-text {
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 3vw, 2.8rem);
-  font-weight: 600;
-  font-style: italic;
-  color: var(--ink);
-  line-height: 1.25;
-  letter-spacing: 0.01em;
-}
-.pullquote-attribution {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 1.5rem;
-}
-
-/* ══════════════════════════════════════
-   CONFERENCES
-══════════════════════════════════════ */
-#conferences {
-  padding: 6rem 0;
-}
-.conf-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-.conf-card {
-  border: 1px solid var(--rule);
-  background: var(--white);
-  overflow: hidden;
-  transition: box-shadow 0.25s, transform 0.25s;
-}
-.conf-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  transform: translateY(-3px);
-}
-.conf-preview {
-  aspect-ratio: 4/3;
-  background: var(--paper2);
-  display: flex; align-items: center; justify-content: center;
-  border-bottom: 1px solid var(--rule2);
-  position: relative;
-  overflow: hidden;
-}
-.conf-preview img {
-  width: 100%; height: 100%; object-fit: cover;
-}
-.conf-preview-placeholder {
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-}
-.conf-preview-icon {
-  font-family: var(--display);
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: var(--rule);
-  line-height: 1;
-}
-.conf-preview-placeholder .label { font-size: 0.55rem; }
-.conf-type-badge {
-  position: absolute; top: 0.8rem; right: 0.8rem;
-  background: var(--accent);
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--white);
-  padding: 0.25rem 0.6rem;
-}
-.conf-body { padding: 1.4rem; }
-.conf-event {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
-h3.conf-title {
-  font-family: var(--display);
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--ink);
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-}
-.conf-meta {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: var(--muted);
-  margin-bottom: 0.8rem;
-}
-.conf-desc {
-  font-size: 0.82rem;
-  color: var(--ink3);
-  line-height: 1.6;
-  margin-bottom: 0.8rem;
-}
-.conf-download {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 0.1rem;
-  transition: color 0.2s;
-}
-.conf-download:hover { color: var(--accent2); }
-
-/* ══════════════════════════════════════
-   PUBLICATIONS
-══════════════════════════════════════ */
-#publications {
-  background: var(--ink);
-  padding: 6rem 0;
-}
-#publications h2.section-title { color: var(--white); }
-#publications .section-num { color: var(--ink3); }
-#publications .section-title-label { color: rgba(255,255,255,0.25); }
-
-.pub-featured {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--ink3);
-  border: 1px solid var(--ink3);
-  margin-bottom: 3rem;
-}
-.pub-featured-card {
-  background: var(--ink2);
-  padding: 2.2rem;
-  transition: background 0.2s;
-}
-.pub-featured-card:hover { background: var(--ink3); }
-.pub-featured-label {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.8rem;
-}
-.pub-featured-title {
-  font-family: var(--display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--white);
-  line-height: 1.25;
-  margin-bottom: 0.6rem;
-}
-.pub-featured-authors {
-  font-size: 0.78rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 0.4rem;
-  line-height: 1.5;
-}
-.pub-featured-venue {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.06em;
-}
-.pub-doi-link {
-  display: inline-block;
-  margin-top: 0.8rem;
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border-bottom: 1px solid rgba(200,16,46,0.3);
-  padding-bottom: 0.1rem;
-  transition: border-color 0.2s;
-}
-.pub-doi-link:hover { border-color: var(--accent); }
-
-.pub-all-label {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.25);
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--ink3);
-}
-.pub-list {
-  display: flex; flex-direction: column;
-  border-top: 1px solid var(--ink3);
-}
-.pub-row {
-  display: grid;
-  grid-template-columns: 3rem 1fr auto;
-  gap: 1.5rem;
-  align-items: start;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid var(--ink3);
-  transition: background 0.2s;
-}
-.pub-row:hover { background: rgba(255,255,255,0.02); margin: 0 -1rem; padding: 1.2rem 1rem; }
-.pub-row-num {
-  font-family: var(--display);
-  font-size: 2rem;
-  font-weight: 900;
-  color: var(--ink3);
-  line-height: 1;
-  text-align: right;
-}
-.pub-row-title {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.55;
-}
-.pub-row-venue {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  color: rgba(255,255,255,0.25);
-  margin-top: 0.3rem;
-  font-style: italic;
-}
-.pub-row-year {
-  font-family: var(--display);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--ink3);
-  white-space: nowrap;
-  align-self: center;
-}
-
-/* ══════════════════════════════════════
-   PERSONAL
-══════════════════════════════════════ */
-#personal {
-  padding: 6rem 0;
-  background: var(--paper);
-}
-.personal-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 5rem;
-  align-items: start;
-}
-.personal-text {}
-.personal-lede {
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--ink);
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--rule);
-}
-.personal-lede em { color: var(--accent); font-style: italic; }
-.personal-body p {
-  font-size: 0.98rem;
-  color: var(--ink3);
-  margin-bottom: 1rem;
-  line-height: 1.75;
-}
-.personal-sidebar {
-  display: flex; flex-direction: column; gap: 1.5rem;
-}
-.personal-fact-card {
-  border-left: 3px solid var(--accent);
-  padding: 1.2rem 1.4rem;
-  background: var(--white);
-}
-.personal-fact-label {
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
-.personal-fact-value {
-  font-family: var(--display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-
-/* ══════════════════════════════════════
-   CONTACT
-══════════════════════════════════════ */
-#contact {
-  background: var(--ink);
-  padding: 6rem 0 4rem;
-}
-.contact-inner {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
-.contact-pre {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-h2.contact-heading {
-  font-family: var(--display);
-  font-size: clamp(3rem, 6vw, 6rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  color: var(--white);
-  line-height: 0.9;
-  margin-bottom: 2rem;
-}
-.contact-sub {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1rem;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 3rem;
-  line-height: 1.6;
-}
-.contact-links {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-}
-.contact-link {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  border: 1px solid var(--ink3);
-  padding: 0.7rem 1.4rem;
-  transition: all 0.2s;
-}
-.contact-link:hover {
-  color: var(--white);
-  border-color: var(--accent);
-  background: rgba(200,16,46,0.08);
-}
-.contact-cta {
-  display: inline-block;
-  background: var(--accent);
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--white);
-  padding: 1rem 2.5rem;
-  margin-bottom: 4rem;
-  transition: background 0.2s;
-}
-.contact-cta:hover { background: var(--accent2); }
-
-.footer-rule { border-top: 1px solid var(--ink3); padding-top: 2rem; }
-.footer-line {
-  font-family: var(--mono);
-  font-size: 0.55rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-  text-align: center;
-}
-.footer-line a { color: var(--accent); }
-
-/* ══════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════ */
-@media (max-width: 1024px) {
-  .container { padding: 0 2rem; }
-  .nav-inner { padding: 0.9rem 2rem; }
-  .nav-links { gap: 1.5rem; }
-  .hero-main { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .exp-cards { grid-template-columns: 1fr; }
-  .pub-featured { grid-template-columns: 1fr; }
-  .conf-grid { grid-template-columns: repeat(2, 1fr); }
-  .personal-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .teaching-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  h1.hero-name { font-size: 4rem; }
-  .hero-stats-inner { grid-template-columns: repeat(2, 1fr); }
-  .section-header { grid-template-columns: 1fr; gap: 0.5rem; }
-  .section-num { font-size: 2.5rem; }
-  .conf-grid { grid-template-columns: 1fr; }
-  .hero-descriptor { flex-direction: column; gap: 1.5rem; }
-  .research-item { grid-template-columns: 1fr; }
-  .research-index { display: none; }
-  .pub-row { grid-template-columns: 2rem 1fr; }
-  .pub-row-year { display: none; }
+@media(max-width:768px){
+  .nav-links{display:none;}
+  h1.hero-name{font-size:4.5rem;}
+  .hero-stats-inner{grid-template-columns:1fr 1fr;}
+  .conf-grid{grid-template-columns:1fr;}
+  .sh{grid-template-columns:auto 1fr;gap:0.8rem;}
+  .ss{display:none;}
+  .sn{font-size:2.5rem;}
+  .research-row{grid-template-columns:1fr;}
+  .research-idx{display:none;}
+  .pub-row{grid-template-columns:2rem 1fr;}
+  .pry{display:none;}
 }
 </style>
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
 <nav id="nav">
   <div class="nav-inner">
     <div class="nav-logo">Renan <span>Santos</span> Maia</div>
@@ -1058,648 +301,305 @@ h2.contact-heading {
   </div>
 </nav>
 
-<!-- ══ HERO ══ -->
-<section id="hero">
+<div id="hero">
   <div class="hero-masthead">
     <div class="hero-issue">
       <div>Civil Engineer · PhD Candidate</div>
       <div>University of Illinois Urbana-Champaign</div>
-      <div><em>#1</em> U.S. Civil Engineering Program — 2025 & 2026</div>
+      <div><em>#1</em> U.S. Civil Engineering Program — 2025 &amp; 2026</div>
     </div>
     <div class="hero-social">
       <a href="mailto:rmaia2@illinois.edu">Email</a>
-      <a href="https://linkedin.com/in/renan-santos-maia-2450b3106/" target="_blank">LinkedIn</a>
-      <a href="https://scholar.google.com/citations?user=1jSXQO4AAAAJ&hl=pt-BR" target="_blank">Scholar</a>
-      <a href="https://researchgate.net/profile/profile/Renan-Maia" target="_blank">ResearchGate</a>
-      <a href="https://github.com/renansantosmaia" target="_blank">github</a>
+      <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank">LinkedIn</a>
+      <a href="https://scholar.google.com/YOUR_PROFILE" target="_blank">Scholar</a>
+      <a href="https://researchgate.net/profile/YOUR_PROFILE" target="_blank">ResearchGate</a>
     </div>
   </div>
-
   <div class="hero-main">
-    <div class="hero-name-block">
-      <h1 class="hero-name">
-        <span>Renan</span><br>
-        <span class="accent-line">Santos</span><br>
-        <span>Maia</span>
-        <span class="italic-line">Civil Engineer · PhD Candidate</span>
-      </h1>
+    <div>
+      <h1 class="hero-name">Renan<br><span class="gold">Santos</span><br>Maia<span class="dim">Civil Engineer · PhD Candidate</span></h1>
       <div class="hero-descriptor">
-        <p class="hero-tagline">
-          Transportation infrastructure, pavement engineering, and geotechnical systems — from laboratory specimen to network-level decision.
-        </p>
+        <p class="hero-tagline">Transportation infrastructure, pavement engineering, and geotechnical systems — from laboratory specimen to network-level decision.</p>
         <div class="hero-facts">
-          <div class="hero-fact">UIUC — Exp. 2026</div>
-          <div class="hero-fact">10+ years experience</div>
-          <div class="hero-fact">3 countries</div>
+          <div class="hero-fact">UIUC — Expected 2026</div>
+          <div class="hero-fact">10+ years · 3 countries</div>
           <div class="hero-fact">Open to relocation</div>
           <div class="hero-fact">FE / PE track</div>
         </div>
       </div>
     </div>
+    <div class="hero-right">
+      <div class="hero-badge">
+        <div class="hero-badge-label">Institution</div>
+        <div class="hero-badge-value">University of Illinois<br>Urbana-Champaign</div>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-label">PhD GPA</div>
+        <div class="hero-badge-value">3.93 / 4.00</div>
+      </div>
+      <div class="hero-badge">
+        <div class="hero-badge-label">Dissertation</div>
+        <div class="hero-badge-value" style="font-size:0.9rem;font-style:italic;font-family:var(--serif);font-weight:400;color:rgba(255,255,255,0.55);">Perpetual Pavements in the Context of Asphalt Recycling, Changing Climate, and New Mobility-Related Loading</div>
+      </div>
+    </div>
   </div>
-
   <div class="hero-stats-bar">
     <div class="hero-stats-inner">
-      <div class="hero-stat">
-        <div class="hero-stat-num">10+</div>
-        <div class="hero-stat-label">Peer-reviewed publications</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">5</div>
-        <div class="hero-stat-label">IDOT / State DOT projects</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">3.93</div>
-        <div class="hero-stat-label">PhD GPA / 4.00</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">2026</div>
-        <div class="hero-stat-label">Expected graduation</div>
-      </div>
+      <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Peer-reviewed publications</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">IDOT / State DOT projects</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Years of experience</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">2026</div><div class="hero-stat-label">Available · Open to relocate</div></div>
     </div>
-  </div>
-</section>
-
-<!-- ══ ABOUT ══ -->
-<section id="about">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-num">01</span>
-      <h2 class="section-title">About</h2>
-      <div class="section-title-label">Research-to-Practice<br>Engineer</div>
-    </div>
-
-    <div class="about-grid">
-      <div>
-        <p class="about-lede fade-up">
-          I connect <strong>laboratory rigor to field reality</strong> — and field reality to the decisions that shape infrastructure networks.
-        </p>
-        <div class="about-body fade-up">
-          <p>I am a PhD Candidate in Civil Engineering at the University of Illinois Urbana-Champaign, where I serve as a Graduate Research Assistant at the Illinois Center for Transportation. My doctoral research bridges flexible pavement material behavior and structural response to inform agency-level decision-making — integrating laboratory characterization, field evaluation, mechanistic modeling, and network-scale management.</p>
-          <p>My professional trajectory spans over a decade across research, field, and industry environments in Brazil, the United Kingdom, and the United States. I have led applied research programs for IDOT, worked as a Civil Engineer on Brazil's Transnordestina Railway, and held field and plant roles in asphalt construction and airport pavement QA/QC.</p>
-          <p>I believe technical rigor is not the opposite of innovation — it is its precondition. The most consequential improvements to engineering practice do not come from replicating what is standard, but from understanding, with depth and honesty, why current solutions perform the way they do and where they fall short.</p>
-        </div>
-      </div>
-
-      <div class="about-sidebar fade-up">
-        <div class="sidebar-card">
-          <div class="sidebar-card-label">Education</div>
-          <div class="sidebar-card-item">
-            <strong>Ph.D. Civil Engineering (exp. 2026)</strong>
-            University of Illinois Urbana-Champaign<br>GPA: 3.93 / 4.00
-          </div>
-          <div class="sidebar-card-item" style="margin-top:1rem;">
-            <strong>M.Sc. Transportation Engineering</strong>
-            Federal University of Ceará, Brazil<br>GPA: 9.55 / 10.00
-          </div>
-          <div class="sidebar-card-item" style="margin-top:1rem;">
-            <strong>B.Sc. Civil Engineering</strong>
-            Federal University of Ceará + University of Birmingham (UK exchange)
-          </div>
-        </div>
-
-        <div class="sidebar-card">
-          <div class="sidebar-card-label">Selected Awards</div>
-          <div class="sidebar-card-item">
-            <strong>IAPA Scholarship Award — 2025</strong>
-            Illinois Asphalt Pavement Association
-          </div>
-          <div class="sidebar-card-item" style="margin-top:0.8rem;">
-            <strong>Marshall Thompson Student Research Award — 2024</strong>
-            Illinois Center for Transportation
-          </div>
-          <div class="sidebar-card-item" style="margin-top:0.8rem;">
-            <strong>Graduate Teacher Certificate — 2026</strong>
-            UIUC Center for Innovation in Teaching & Learning
-          </div>
-        </div>
-
-        <div class="sidebar-card">
-          <div class="sidebar-card-label">Languages</div>
-          <div class="sidebar-card-item">
-            <strong>Portuguese</strong> Native
-          </div>
-          <div class="sidebar-card-item">
-            <strong>English</strong> Fluent
-          </div>
-          <div class="sidebar-card-item">
-            <strong>Spanish</strong> Intermediate
-          </div>
-          <div class="sidebar-card-item">
-            <strong>French</strong> Basic
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ EXPERIENCE ══ -->
-<section id="experience">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-num">02</span>
-      <h2 class="section-title">Industry Experience</h2>
-      <div class="section-title-label" style="color:rgba(255,255,255,0.25);">Field · Design<br>Construction</div>
-    </div>
-
-    <div class="exp-cards">
-      <div class="exp-card fade-up">
-        <div class="exp-type">Railway Design & Construction</div>
-        <div class="exp-period">2019–2020</div>
-        <h3 class="exp-title">Junior Civil Engineer</h3>
-        <div class="exp-company">Vetor Engenharia & Transnordestina Logística — Brazil</div>
-        <p class="exp-summary">Worked on the engineering team for the Transnordestina Railway — then the largest railway under active construction in Brazil (~1,700 km), connecting agricultural production regions in northeastern Brazil to Atlantic export ports. Scope covered the full civil infrastructure: earthworks, granular layers, rail superstructure, drainage, bridges, viaducts, tunnels, and signaling systems.</p>
-        <ul class="exp-highlights">
-          <li>Review and adaptation of executive designs across earthworks, drainage, and rail superstructure scopes</li>
-          <li>Regulatory compliance review and preparation of as-built documentation</li>
-          <li>Quantity surveying and cost tracking across multiple simultaneous construction fronts</li>
-          <li>Soil analysis and granular layer evaluation for subgrade and sub-ballast design</li>
-          <li>Coordination across structural, drainage, and signaling multidisciplinary teams</li>
-        </ul>
-      </div>
-
-      <div class="exp-card fade-up">
-        <div class="exp-type">Asphalt Plant & Paving Contractor</div>
-        <div class="exp-period">2017</div>
-        <h3 class="exp-title">Civil Engineering Intern</h3>
-        <div class="exp-company">Installe Engenharia — Fortaleza, Brazil</div>
-        <p class="exp-summary">Full-scope experience in asphalt concrete production at plant level and flexible pavement construction — including airport runway trial sections. Responsible for laboratory QA/QC, compaction monitoring, mineral skeleton optimization, and surface texture and friction evaluation. Pioneered two local firsts in pavement surface technology for the city of Fortaleza.</p>
-        <ul class="exp-highlights">
-          <li>Led mix design and implementation of the first Porous Friction Course (OGFC) sections in Fortaleza</li>
-          <li>Led design activities for the first Highly Modified Asphalt Binder pavement sections in the city</li>
-          <li>QA/QC oversight for airport runway pavement trial sections — compaction, gradation, and density</li>
-          <li>Laboratory analysis for mineral skeleton optimization (aggregate gradation and compactability)</li>
-          <li>Surface texture and friction evaluation on completed pavement sections</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ RESEARCH ══ -->
-<section id="research">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-num">03</span>
-      <h2 class="section-title">Research Projects</h2>
-      <div class="section-title-label">Applied · DOT-Sponsored<br>Illinois Center for Transportation</div>
-    </div>
-
-    <div class="research-list">
-
-      <div class="research-item fade-up">
-        <div class="research-index"><span>01</span></div>
-        <div class="research-body">
-          <div class="research-meta">
-            <span class="research-client">IDOT · ICT R27-267</span>
-            <span class="research-period">2025–Present</span>
-            <span class="research-type">Structural Evaluation · Network-Scale</span>
-          </div>
-          <h3 class="research-title">Illinois Flexible Pavement Design & Monitoring</h3>
-          <p class="research-summary">Advancing network-level pavement integrity studies for Illinois by synthesizing structural performance data from over 20 years of extended-life (perpetual) pavement sections. Integrates FWD and Traffic Speed Deflectometer (TSD) measurements with laboratory analysis of field-extracted cores to evaluate the modulus-fatigue relationship and Remaining Service Life (RSL).</p>
-          <div class="research-outcomes">
-            <div class="research-outcome">Network-scale FWD and TSD data collection and backcalculation program</div>
-            <div class="research-outcome">Lab fatigue and modulus characterization of cores from long-term pavement sections</div>
-            <div class="research-outcome">RSL framework connecting material behavior to field structural performance trajectories</div>
-            <div class="research-outcome">Deliverables directly informing IDOT extended-life pavement design guidelines</div>
-          </div>
-          <div class="research-tags">
-            <span class="tag-pill">MEPDG</span><span class="tag-pill">FWD</span><span class="tag-pill">TSD</span><span class="tag-pill">Perpetual Pavements</span><span class="tag-pill">RSL</span><span class="tag-pill">Fatigue</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="research-item fade-up">
-        <div class="research-index"><span>02</span></div>
-        <div class="research-body">
-          <div class="research-meta">
-            <span class="research-client">IDOT · ICT R27-264</span>
-            <span class="research-period">2023–Present</span>
-            <span class="research-type">Surface Functionality · Traffic Safety</span>
-          </div>
-          <h3 class="research-title">Pavement Friction Management Program — Illinois</h3>
-          <p class="research-summary">Developing a statewide friction management framework for IDOT. Leads aggregate characterization (AIMS morphology + Micro-Deval degradation) to identify priority sources and gradation bands for surface mixtures and chip seals. Outcomes feed an optimization model linking crash-risk thresholds to resurfacing prioritization.</p>
-          <div class="research-outcomes">
-            <div class="research-outcome">AIMS-based aggregate morphology database for Illinois surface mix and chip seal sources</div>
-            <div class="research-outcome">Micro-Deval degradation thresholds for friction-critical aggregate selection</div>
-            <div class="research-outcome">Network-level resurfacing prioritization model for IDOT</div>
-          </div>
-          <div class="research-tags">
-            <span class="tag-pill">Friction Management</span><span class="tag-pill">AIMS</span><span class="tag-pill">Micro-Deval</span><span class="tag-pill">Traffic Safety</span><span class="tag-pill">Chip Seal</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="research-item fade-up">
-        <div class="research-index"><span>03</span></div>
-        <div class="research-body">
-          <div class="research-meta">
-            <span class="research-client">IDOT · ICT R27-233</span>
-            <span class="research-period">2021–2024</span>
-            <span class="research-type">Pavement Design · Lab Characterization · Modeling</span>
-          </div>
-          <h3 class="research-title">Mechanistic-Empirical Design Procedures for Flexible Pavements</h3>
-          <p class="research-summary">Co-developed multiscale ME design inputs for Illinois flexible pavements. Covered dynamic modulus characterization, fatigue and fracture testing, and Bayesian neural network models to replace outdated modulus prediction algorithms in AASHTOWare Pavement ME Design. Results published and delivered as formal IDOT technical reports.</p>
-          <div class="research-outcomes">
-            <div class="research-outcome">Dynamic modulus master curves for Illinois asphalt concrete mixes</div>
-            <div class="research-outcome">I-FIT and beam fatigue characterization for design input calibration</div>
-            <div class="research-outcome">Bayesian neural network model improving MEPDG modulus prediction algorithms</div>
-            <div class="research-outcome">Published: Canadian Journal of Civil Engineering, 51(7), 645–658 (2024)</div>
-          </div>
-          <div class="research-tags">
-            <span class="tag-pill">MEPDG</span><span class="tag-pill">Dynamic Modulus</span><span class="tag-pill">Fatigue</span><span class="tag-pill">I-FIT</span><span class="tag-pill">Bayesian Modeling</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="research-item fade-up">
-        <div class="research-index"><span>04</span></div>
-        <div class="research-body">
-          <div class="research-meta">
-            <span class="research-client">IL-IN Sea Grant · UIUC</span>
-            <span class="research-period">2022–2023</span>
-            <span class="research-type">Sustainable Design · Cold-Region Performance</span>
-          </div>
-          <h3 class="research-title">Porous Asphalt Mixtures — Chicago & Southern Lake Michigan</h3>
-          <p class="research-summary">Laboratory program evaluating porous asphalt mixture performance under cold-region conditions representative of the Chicago metro area. Addressed mix design, freeze-thaw durability, permeability, and rutting resistance — providing a technical basis for permeable pavement implementation for stormwater and water quality goals in the Great Lakes region.</p>
-          <div class="research-outcomes">
-            <div class="research-outcome">Mix design recommendations for cold-region porous asphalt balancing permeability and structural performance</div>
-            <div class="research-outcome">Freeze-thaw durability assessment of candidate mixture designs</div>
-            <div class="research-outcome">Published: Case Studies in Construction Materials, 20, e03250 (2024)</div>
-          </div>
-          <div class="research-tags">
-            <span class="tag-pill">Porous Asphalt</span><span class="tag-pill">Stormwater</span><span class="tag-pill">Cold Region</span><span class="tag-pill">Sustainability</span><span class="tag-pill">Chicago</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="research-item fade-up">
-        <div class="research-index"><span>05</span></div>
-        <div class="research-body">
-          <div class="research-meta">
-            <span class="research-client">Federal University of Ceará · CNPq</span>
-            <span class="research-period">2018–2022</span>
-            <span class="research-type">Traffic Safety · M.Sc. Research</span>
-          </div>
-          <h3 class="research-title">Tire-Pavement Friction & Traffic Safety — Urban Pavement Design</h3>
-          <p class="research-summary">Developed a framework connecting pavement surface texture and tire-pavement friction to traffic safety outcomes in urban environments. Integrated microscopic traffic simulation (VISSIM), weather-dependent vehicle behavior, and field-derived friction thresholds. Demonstrated that low-cost aggregate-level decisions can reduce public health burden through safer infrastructure.</p>
-          <div class="research-outcomes">
-            <div class="research-outcome">Friction-safety framework linking surface texture to simulated vehicular conflicts</div>
-            <div class="research-outcome">Published: IJPE (2024); Journal of Transportation Engineering Part B (2021)</div>
-          </div>
-          <div class="research-tags">
-            <span class="tag-pill">Friction</span><span class="tag-pill">Traffic Safety</span><span class="tag-pill">VISSIM</span><span class="tag-pill">SSAM</span><span class="tag-pill">Urban Pavements</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ TEACHING ══ -->
-<section id="teaching">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-num">04</span>
-      <h2 class="section-title">Teaching</h2>
-      <div class="section-title-label" style="color:rgba(255,255,255,0.5);">UIUC · Grainger<br>College of Engineering</div>
-    </div>
-
-    <p class="teaching-intro fade-up">
-      Teaching has sharpened my ability to communicate across expertise levels, mentor with patience, and build analytical confidence in others — skills I consider as essential to engineering practice as any technical method.
-    </p>
-
-    <div class="teaching-grid">
-      <div class="teaching-card fade-up">
-        <div class="teaching-role">Instructor of Record</div>
-        <div class="teaching-code">405</div>
-        <h3 class="teaching-course">CEE 405 — Asphalt Materials</h3>
-        <div class="teaching-institution">University of Illinois Urbana-Champaign · 2024–2025</div>
-        <p class="teaching-summary">Sole instructor for the undergraduate Asphalt Materials course at UIUC's Grainger College of Engineering. Developed and delivered lectures, laboratory sessions, and design problem modules grounded in real-world DOT datasets and contemporary infrastructure challenges. Emphasized hands-on laboratory experience and project-based learning to build technical competence and analytical confidence.</p>
-      </div>
-
-      <div class="teaching-card fade-up">
-        <div class="teaching-role">Teaching Assistant</div>
-        <div class="teaching-code">310</div>
-        <h3 class="teaching-course">CEE 310 — Transportation Engineering</h3>
-        <div class="teaching-institution">University of Illinois Urbana-Champaign · 2022–2023</div>
-        <p class="teaching-summary">Led discussion sections, office hours, and laboratory demonstrations for the core undergraduate Transportation Engineering course. Supported students through analytical problem sets, design exercises, and research-informed case studies connecting course theory to current IDOT and FHWA practice.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ PULLQUOTE ══ -->
-<div class="pullquote-section">
-  <div class="pullquote fade-up">
-    <span class="pullquote-mark">"</span>
-    <p class="pullquote-text">Technical rigor is not the opposite of innovation — it is its precondition.</p>
-    <div class="pullquote-attribution">— Renan Santos Maia · Engineering Philosophy</div>
   </div>
 </div>
 
-<!-- ══ CONFERENCES ══ -->
-<section id="conferences">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-num">05</span>
-      <h2 class="section-title">Conferences</h2>
-      <div class="section-title-label">Presentations · Posters<br>Invited Talks</div>
+<div class="sw" id="about"><div class="container">
+  <div class="sh fade-up"><span class="sn">01</span><h2 class="st">About</h2><div class="ss">Research-to-Practice<br>Engineer</div></div>
+  <div class="sr"></div>
+  <div class="about-grid">
+    <div>
+      <p class="about-lede fade-up">I connect <strong>laboratory rigor to field reality</strong> — and field reality to the decisions that shape <span class="gld">infrastructure networks</span>.</p>
+      <div class="about-body fade-up">
+        <p>I am a PhD Candidate in Civil Engineering at the University of Illinois Urbana-Champaign, where I serve as a Graduate Research Assistant at the Illinois Center for Transportation. My doctoral research bridges flexible pavement material behavior and structural response to inform agency-level decision-making — integrating laboratory characterization, field evaluation, mechanistic modeling, and network-scale management.</p>
+        <p>My professional trajectory spans over a decade across research, field, and industry environments in Brazil, the United Kingdom, and the United States. I have led applied research programs for IDOT, worked as a Civil Engineer on Brazil's Transnordestina Railway, and held field and plant roles in asphalt construction and airport pavement QA/QC.</p>
+        <p>I believe technical rigor is not the opposite of innovation — it is its precondition. The most consequential improvements to engineering practice come from understanding, with depth and honesty, why current solutions perform the way they do and where they fall short.</p>
+      </div>
     </div>
-
-    <div class="conf-grid" id="conf-grid">
-      <!-- Placeholder cards — replace with your actual conferences -->
-      <div class="conf-card fade-up">
-        <div class="conf-preview">
-          <div class="conf-preview-placeholder">
-            <div class="conf-preview-icon">↑</div>
-            <span class="label">Add poster / slides image</span>
-          </div>
-          <div class="conf-type-badge">Oral Presentation</div>
-        </div>
-        <div class="conf-body">
-          <div class="conf-event">ADD CONFERENCE NAME</div>
-          <h3 class="conf-title">Add Your Presentation Title Here</h3>
-          <div class="conf-meta">ADD LOCATION · 20XX</div>
-          <p class="conf-desc">Add abstract or short description of this presentation.</p>
-          <span class="conf-download">+ Upload slides via Admin</span>
-        </div>
+    <div class="fade-up">
+      <div class="sc"><div class="sc-label">Education</div>
+        <div class="sc-item"><strong>Ph.D. Civil Engineering (exp. 2026)</strong>University of Illinois Urbana-Champaign · GPA 3.93/4.00</div>
+        <div class="sc-item" style="margin-top:0.9rem;"><strong>M.Sc. Transportation Engineering</strong>Federal University of Ceará, Brazil · GPA 9.55/10.00</div>
+        <div class="sc-item" style="margin-top:0.9rem;"><strong>B.Sc. Civil Engineering</strong>Federal University of Ceará + University of Birmingham (UK exchange)</div>
       </div>
-
-      <div class="conf-card fade-up">
-        <div class="conf-preview">
-          <div class="conf-preview-placeholder">
-            <div class="conf-preview-icon">↑</div>
-            <span class="label">Add poster / slides image</span>
-          </div>
-          <div class="conf-type-badge">Poster</div>
-        </div>
-        <div class="conf-body">
-          <div class="conf-event">ADD CONFERENCE NAME</div>
-          <h3 class="conf-title">Add Your Poster Title Here</h3>
-          <div class="conf-meta">ADD LOCATION · 20XX</div>
-          <p class="conf-desc">Add abstract or short description of this poster.</p>
-          <span class="conf-download">+ Upload poster via Admin</span>
-        </div>
+      <div class="sc"><div class="sc-label">Selected Awards</div>
+        <div class="sc-item"><strong>IAPA Scholarship Award — 2025</strong>Illinois Asphalt Pavement Association</div>
+        <div class="sc-item" style="margin-top:0.8rem;"><strong>Marshall Thompson Student Research Award — 2024</strong>Illinois Center for Transportation</div>
+        <div class="sc-item" style="margin-top:0.8rem;"><strong>Graduate Teacher Certificate — 2026</strong>UIUC Center for Innovation in Teaching &amp; Learning</div>
       </div>
-
-      <div class="conf-card fade-up" style="border: 2px dashed var(--rule2); background: transparent; display:flex; align-items:center; justify-content:center; min-height: 320px; flex-direction:column; gap:0.8rem;">
-        <div style="font-family:var(--display); font-size:2rem; font-weight:900; color:var(--rule); line-height:1;">+</div>
-        <div class="label" style="text-align:center; line-height:1.8;">Add more conferences<br>via the Admin panel</div>
+      <div class="sc"><div class="sc-label">Languages</div>
+        <div class="sc-item"><strong>Portuguese</strong>Native</div>
+        <div class="sc-item"><strong>English</strong>Fluent</div>
+        <div class="sc-item"><strong>Spanish</strong>Intermediate · <strong>French</strong> Basic</div>
       </div>
     </div>
   </div>
-</section>
+</div></div>
 
-<!-- ══ PUBLICATIONS ══ -->
-<section id="publications">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-num">06</span>
-      <h2 class="section-title">Publications</h2>
-      <div class="section-title-label" style="color:rgba(255,255,255,0.25);">10 Journal Articles<br>Full list on Google Scholar</div>
+<div class="sw dark" id="experience"><div class="container">
+  <div class="sh fade-up"><span class="sn lt">02</span><h2 class="st lt">Industry Experience</h2><div class="ss lt">Field · Design<br>Construction</div></div>
+  <div class="sr lt"></div>
+  <div class="exp-grid">
+    <div class="exp-card fade-up">
+      <div class="exp-type">Railway Design &amp; Construction</div><div class="exp-period">2019–2020</div>
+      <h3 class="exp-title">Junior Civil Engineer</h3>
+      <div class="exp-co">Vetor Engenharia &amp; Transnordestina Logística — Brazil</div>
+      <p class="exp-sum">Engineering team for the Transnordestina Railway — then the largest railway under active construction in Brazil (~1,700 km), connecting agricultural production regions in northeastern Brazil to Atlantic export ports. Full civil scope: earthworks, granular layers, rail superstructure, drainage, bridges, viaducts, tunnels, and signaling.</p>
+      <ul class="exp-list">
+        <li>Review and adaptation of executive designs across earthworks, drainage, and rail superstructure</li>
+        <li>Regulatory compliance review and preparation of as-built documentation</li>
+        <li>Quantity surveying and cost tracking across multiple simultaneous construction fronts</li>
+        <li>Soil analysis and granular layer evaluation for subgrade and sub-ballast design</li>
+        <li>Coordination across structural, drainage, and signaling multidisciplinary teams</li>
+      </ul>
     </div>
-
-    <!-- FEATURED -->
-    <div class="pub-featured fade-up">
-      <div class="pub-featured-card">
-        <div class="pub-featured-label">Featured · International Journal of Pavement Engineering · 2024</div>
-        <div class="pub-featured-title">Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction</div>
-        <div class="pub-featured-authors">Santos Maia, R., Hajj, R. M., Cunto, F. J. C., & Castelo Branco, V. T. F.</div>
-        <div class="pub-featured-venue">Int. J. Pavement Engineering, 25(1), 1–15</div>
-        <a href="https://doi.org/10.1080/10298436.2024.2345138" target="_blank" class="pub-doi-link">doi:10.1080/10298436.2024.2345138 →</a>
-      </div>
-      <div class="pub-featured-card">
-        <div class="pub-featured-label">Featured · Canadian Journal of Civil Engineering · 2024</div>
-        <div class="pub-featured-title">Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for mechanistic–empirical flexible pavement design in Illinois</div>
-        <div class="pub-featured-authors">Santos Maia, R., & Hajj, R.</div>
-        <div class="pub-featured-venue">Canadian J. Civil Engineering, 51(7), 645–658</div>
-        <a href="https://doi.org/10.1139/cjce-2024-0299" target="_blank" class="pub-doi-link">doi:10.1139/cjce-2024-0299 →</a>
-      </div>
-    </div>
-
-    <!-- ALL -->
-    <div class="pub-all-label">All Publications</div>
-    <div class="pub-list">
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">01</div>
-        <div>
-          <div class="pub-row-title">Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction</div>
-          <div class="pub-row-venue">International Journal of Pavement Engineering · Santos Maia, R. et al.</div>
-        </div>
-        <div class="pub-row-year">2024</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">02</div>
-        <div>
-          <div class="pub-row-title">Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for ME flexible pavement design in Illinois</div>
-          <div class="pub-row-venue">Canadian Journal of Civil Engineering · Santos Maia, R. & Hajj, R.</div>
-        </div>
-        <div class="pub-row-year">2024</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">03</div>
-        <div>
-          <div class="pub-row-title">Porous asphalt mixture performance in cold regions: Case study of Chicago</div>
-          <div class="pub-row-venue">Case Studies in Construction Materials · Santos Maia, R., Lu, Y., & Hajj, R. M.</div>
-        </div>
-        <div class="pub-row-year">2024</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">04</div>
-        <div>
-          <div class="pub-row-title">Shape properties validation of virtual 3D particles from AIMS 2D images for railway ballast DEM modeling</div>
-          <div class="pub-row-venue">Granular Matter · Fernandes Diógenes, D., Santos Maia, R., et al.</div>
-        </div>
-        <div class="pub-row-year">2025</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">05</div>
-        <div>
-          <div class="pub-row-title">Backcalculation of asphalt concrete Poisson's ratio using the ultrasonic pulse velocity test</div>
-          <div class="pub-row-venue">Materials and Structures · Lu, Y., Santos Maia, R., & Hajj, R. M.</div>
-        </div>
-        <div class="pub-row-year">2024</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">06</div>
-        <div>
-          <div class="pub-row-title">Cracking potential evaluation of recycled asphalt materials using the poker chip test and I–FIT</div>
-          <div class="pub-row-venue">Road Materials and Pavement Design · Vyas, A., Santos Maia, R., & Hajj, R.</div>
-        </div>
-        <div class="pub-row-year">2024</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">07</div>
-        <div>
-          <div class="pub-row-title">Multiscale evaluation of asphalt binder rejuvenation dosing and efficacy</div>
-          <div class="pub-row-venue">Construction and Building Materials · Lu, Y., Santos Maia, R., & Hajj, R.</div>
-        </div>
-        <div class="pub-row-year">2023</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">08</div>
-        <div>
-          <div class="pub-row-title">Emulsion mixtures of fractionated reclaimed asphalt pavement and quarry by-products</div>
-          <div class="pub-row-venue">Sustainability · Husain, S. F., Qamhia, I. I., Vyas, A., Santos Maia, R., et al.</div>
-        </div>
-        <div class="pub-row-year">2023</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">09</div>
-        <div>
-          <div class="pub-row-title">3D pavement macrotexture parameters from close-range photogrammetry</div>
-          <div class="pub-row-venue">International Journal of Pavement Engineering · Medeiros Jr, M., Babadopulos, L., Santos Maia, R., et al.</div>
-        </div>
-        <div class="pub-row-year">2023</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-row-num">10</div>
-        <div>
-          <div class="pub-row-title">Relating weather conditions, drivers' behavior, and tire–pavement friction to microscopic simulated vehicular conflicts</div>
-          <div class="pub-row-venue">Journal of Transportation Engineering, Part B: Pavements · Santos Maia, R. et al.</div>
-        </div>
-        <div class="pub-row-year">2021</div>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top:3rem;">
-      <a href="https://scholar.google.com" target="_blank" class="contact-cta" style="display:inline-block;">
-        Full list on Google Scholar →
-      </a>
+    <div class="exp-card fade-up">
+      <div class="exp-type">Asphalt Plant &amp; Paving Contractor</div><div class="exp-period">2017</div>
+      <h3 class="exp-title">Civil Engineering Intern</h3>
+      <div class="exp-co">Installe Engenharia — Fortaleza, Brazil</div>
+      <p class="exp-sum">Full-scope experience in asphalt concrete production at plant level and flexible pavement construction — including airport runway trial sections. Responsible for laboratory QA/QC, compaction monitoring, mineral skeleton optimization, and surface texture and friction evaluation. Pioneered two local firsts in pavement surface technology.</p>
+      <ul class="exp-list">
+        <li>Led mix design and implementation of the first Porous Friction Course (OGFC) sections in Fortaleza</li>
+        <li>Led design activities for the first Highly Modified Asphalt Binder pavement sections in the city</li>
+        <li>QA/QC oversight for airport runway pavement trial sections — compaction, gradation, and density</li>
+        <li>Laboratory analysis for mineral skeleton optimization and aggregate gradation</li>
+        <li>Surface texture and friction evaluation on completed pavement sections</li>
+      </ul>
     </div>
   </div>
-</section>
+</div></div>
 
-<!-- ══ PERSONAL ══ -->
-<section id="personal">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="section-num">07</span>
-      <h2 class="section-title">Personal</h2>
-      <div class="section-title-label">Beyond the Lab<br>& the Office</div>
-    </div>
-
-    <div class="personal-grid">
-      <div class="personal-text">
-        <p class="personal-lede fade-up">
-          I am Brazilian. I have lived in the UK and spent the last several years in the American Midwest. <em>Moving between cultures is one of the best engineering educations I have had.</em>
-        </p>
-        <div class="personal-body fade-up">
-          <p>It teaches you to listen carefully, communicate across difference, and find common ground quickly — skills I consider just as critical in engineering as any technical method. Every project involves people with different priorities, backgrounds, and pressures. The ability to navigate that is not soft; it is structural.</p>
-          <p>My teaching experience has reinforced this. Standing in front of a classroom and making complex mechanics intuitive to undergraduates who are simultaneously overwhelmed and skeptical trains a kind of communicative patience that carries directly into project teams, client meetings, and field coordination. I am the kind of engineer who finds the solution with the team, not around it.</p>
-          <p>I thrive in dynamic, high-energy environments. Big cities energize me — the density, the complexity, the pace. I am fully open to relocating, and I am drawn to the kind of problems that only dense urban infrastructure creates: constrained sites, competing stakeholder interests, legacy systems, and the need for solutions that are simultaneously technically rigorous and practically deployable.</p>
-          <p>Outside of work, I run long distances, which has taught me more about pacing, endurance, and honest self-assessment than almost anything else. I explore cities on foot whenever I can, which — it turns out — is an excellent way to develop opinions about pavement quality.</p>
-        </div>
+<div class="sw" id="research"><div class="container">
+  <div class="sh fade-up"><span class="sn">03</span><h2 class="st">Research Projects</h2><div class="ss">Applied · DOT-Sponsored<br>Illinois Center for Transportation</div></div>
+  <div class="sr"></div>
+  <div class="research-list">
+    <div class="research-row fade-up">
+      <div class="research-idx"><span>01</span></div>
+      <div class="research-body">
+        <div class="research-meta"><span class="rc">IDOT · ICT R27-267</span><span class="rp">2025–Present</span><span class="rt">Structural Evaluation · Network-Scale</span></div>
+        <h3 class="research-title">Illinois Flexible Pavement Design &amp; Monitoring</h3>
+        <p class="research-sum">Advancing network-level pavement integrity studies by synthesizing structural performance data from over 20 years of extended-life (perpetual) pavement sections. Integrates FWD and Traffic Speed Deflectometer (TSD) measurements with laboratory analysis of field-extracted cores to evaluate the modulus-fatigue relationship and Remaining Service Life (RSL), accounting for evolving material technologies, environmental stressors, and modern mobility patterns.</p>
+        <div class="ro">Network-scale FWD and TSD data collection and backcalculation program</div>
+        <div class="ro">Lab fatigue and modulus characterization of cores from long-term pavement sections</div>
+        <div class="ro">RSL framework connecting material behavior to field structural performance trajectories</div>
+        <div class="ro">Deliverables directly informing IDOT extended-life pavement design guidelines</div>
+        <div class="rtags"><span class="tag">MEPDG</span><span class="tag">FWD</span><span class="tag">TSD</span><span class="tag">Perpetual Pavements</span><span class="tag">RSL</span><span class="tag">Fatigue</span></div>
       </div>
-
-      <div class="personal-sidebar fade-up">
-        <div class="personal-fact-card">
-          <div class="personal-fact-label">Based in</div>
-          <div class="personal-fact-value">Urbana, IL → Anywhere</div>
-        </div>
-        <div class="personal-fact-card">
-          <div class="personal-fact-label">Countries lived & worked</div>
-          <div class="personal-fact-value">Brazil · UK · USA</div>
-        </div>
-        <div class="personal-fact-card">
-          <div class="personal-fact-label">Languages</div>
-          <div class="personal-fact-value">PT · EN · ES · FR (basic)</div>
-        </div>
-        <div class="personal-fact-card">
-          <div class="personal-fact-label">Outside the lab</div>
-          <div class="personal-fact-value">Long-distance running, cities on foot, mentoring students</div>
-        </div>
-        <div class="personal-fact-card">
-          <div class="personal-fact-label">Professional track</div>
-          <div class="personal-fact-value">FE exam → PE licensure</div>
-        </div>
-        <div class="personal-fact-card">
-          <div class="personal-fact-label">Available</div>
-          <div class="personal-fact-value">Summer / Fall 2026</div>
-        </div>
+    </div>
+    <div class="research-row fade-up">
+      <div class="research-idx"><span>02</span></div>
+      <div class="research-body">
+        <div class="research-meta"><span class="rc">IDOT · ICT R27-264</span><span class="rp">2023–Present</span><span class="rt">Surface Functionality · Traffic Safety</span></div>
+        <h3 class="research-title">Pavement Friction Management Program — Illinois</h3>
+        <p class="research-sum">Developing a statewide friction management framework for IDOT. Leads aggregate characterization via AIMS (morphology) and Micro-Deval (degradation) to identify priority sources and gradation bands for surface mixtures and chip seals. Outcomes feed a crash-risk threshold and resurfacing prioritization model, directly connecting pavement engineering to road safety policy.</p>
+        <div class="ro">AIMS-based aggregate morphology database for Illinois surface mix and chip seal sources</div>
+        <div class="ro">Micro-Deval degradation thresholds for friction-critical aggregate selection</div>
+        <div class="ro">Network-level resurfacing prioritization model integrating crash-risk thresholds</div>
+        <div class="rtags"><span class="tag">Friction Management</span><span class="tag">AIMS</span><span class="tag">Micro-Deval</span><span class="tag">Traffic Safety</span><span class="tag">Chip Seal</span></div>
+      </div>
+    </div>
+    <div class="research-row fade-up">
+      <div class="research-idx"><span>03</span></div>
+      <div class="research-body">
+        <div class="research-meta"><span class="rc">IDOT · ICT R27-233</span><span class="rp">2021–2024</span><span class="rt">Pavement Design · Lab Characterization · Modeling</span></div>
+        <h3 class="research-title">Mechanistic-Empirical Design Procedures for Flexible Pavements</h3>
+        <p class="research-sum">Co-developed multiscale ME design inputs for Illinois flexible pavements. Comprehensive effort covering dynamic modulus characterization, fatigue and fracture testing, and Bayesian neural network models to replace outdated modulus prediction algorithms in AASHTOWare Pavement ME Design. Results published and delivered as formal IDOT technical reports.</p>
+        <div class="ro">Dynamic modulus master curves for Illinois asphalt concrete mixes</div>
+        <div class="ro">I-FIT and beam fatigue characterization for design input calibration</div>
+        <div class="ro">Bayesian neural network model improving MEPDG modulus prediction — Published: Canadian J. Civil Engineering (2024)</div>
+        <div class="rtags"><span class="tag">MEPDG</span><span class="tag">Dynamic Modulus</span><span class="tag">Fatigue</span><span class="tag">I-FIT</span><span class="tag">Bayesian Modeling</span></div>
+      </div>
+    </div>
+    <div class="research-row fade-up">
+      <div class="research-idx"><span>04</span></div>
+      <div class="research-body">
+        <div class="research-meta"><span class="rc">IL-IN Sea Grant · UIUC</span><span class="rp">2022–2023</span><span class="rt">Sustainable Design · Cold-Region Performance</span></div>
+        <h3 class="research-title">Porous Asphalt Mixtures — Chicago &amp; Southern Lake Michigan</h3>
+        <p class="research-sum">Laboratory program evaluating porous asphalt mixture performance under cold-region conditions representative of the Chicago metro area. Addressed mix design, freeze-thaw durability, permeability, and rutting resistance — providing a technical basis for permeable pavement in the Great Lakes region for stormwater management and water quality goals.</p>
+        <div class="ro">Mix design recommendations for cold-region porous asphalt balancing permeability and structural performance</div>
+        <div class="ro">Freeze-thaw durability assessment of candidate mixture designs</div>
+        <div class="ro">Published: Case Studies in Construction Materials, 20, e03250 (2024)</div>
+        <div class="rtags"><span class="tag">Porous Asphalt</span><span class="tag">Stormwater</span><span class="tag">Cold Region</span><span class="tag">Sustainability</span><span class="tag">Chicago</span></div>
+      </div>
+    </div>
+    <div class="research-row fade-up">
+      <div class="research-idx"><span>05</span></div>
+      <div class="research-body">
+        <div class="research-meta"><span class="rc">Federal University of Ceará · CNPq</span><span class="rp">2018–2022</span><span class="rt">Traffic Safety · M.Sc. Research</span></div>
+        <h3 class="research-title">Tire-Pavement Friction &amp; Traffic Safety — Urban Pavement Design</h3>
+        <p class="research-sum">Developed a framework connecting pavement surface texture and tire-pavement friction to traffic safety outcomes in urban environments, integrating microscopic traffic simulation (VISSIM), weather-dependent vehicle behavior, and field-derived friction thresholds. Demonstrated that low-cost aggregate-level decisions can reduce public health burden through safer infrastructure.</p>
+        <div class="ro">Friction-safety framework linking surface texture to simulated vehicular conflicts</div>
+        <div class="ro">Published: Int. J. Pavement Engineering (2024) · Journal of Transportation Engineering Part B (2021)</div>
+        <div class="rtags"><span class="tag">Friction</span><span class="tag">Traffic Safety</span><span class="tag">VISSIM</span><span class="tag">SSAM</span><span class="tag">Urban Pavements</span></div>
       </div>
     </div>
   </div>
-</section>
+</div></div>
 
-<!-- ══ CONTACT ══ -->
-<section id="contact">
-  <div class="contact-inner">
-    <div class="contact-pre">Open to industry opportunities — 2026</div>
-    <h2 class="contact-heading">Let's Build<br>Something.</h2>
-    <p class="contact-sub">Civil Engineer · PhD Candidate · UIUC<br>Transportation · Pavement · Geotechnical · Site Civil</p>
-
-    <a href="mailto:rmaia2@illinois.edu" class="contact-cta">rmaia2@illinois.edu</a>
-
-    <div class="contact-links">
-      <a href="tel:+12179531792" class="contact-link">+1 (217) 953-1792</a>
-      <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank" class="contact-link">LinkedIn</a>
-      <a href="https://scholar.google.com" target="_blank" class="contact-link">Google Scholar</a>
-      <a href="https://researchgate.net" target="_blank" class="contact-link">ResearchGate</a>
-      <a href="pt/index.html" class="contact-link">🇧🇷 Versão em Português</a>
+<div class="sw dark" id="teaching"><div class="container">
+  <div class="sh fade-up"><span class="sn lt">04</span><h2 class="st lt">Teaching</h2><div class="ss lt">UIUC · Grainger College<br>of Engineering</div></div>
+  <div class="sr lt"></div>
+  <p class="teaching-intro fade-up">Teaching has sharpened my ability to communicate across expertise levels, mentor with patience, and build analytical confidence in others — skills I consider as essential to engineering practice as any technical method.</p>
+  <div class="teaching-grid">
+    <div class="tc fade-up">
+      <div class="tc-role">Instructor of Record</div><div class="tc-code">405</div>
+      <h3 class="tc-course">CEE 405 — Asphalt Materials</h3>
+      <div class="tc-inst">University of Illinois Urbana-Champaign · 2024–2025</div>
+      <p class="tc-sum">Sole instructor for the undergraduate Asphalt Materials course at UIUC's Grainger College of Engineering. Developed and delivered lectures, laboratory sessions, and design problem modules grounded in real-world DOT datasets. Emphasized hands-on laboratory experience and project-based learning to build technical competence and analytical confidence.</p>
     </div>
-
-    <div class="footer-rule">
-      <div class="footer-line">
-        Renan Santos Maia · Civil Engineering Portfolio · 2026 ·
-        <a href="admin/index.html">Admin</a>
-      </div>
+    <div class="tc fade-up">
+      <div class="tc-role">Teaching Assistant</div><div class="tc-code">310</div>
+      <h3 class="tc-course">CEE 310 — Transportation Engineering</h3>
+      <div class="tc-inst">University of Illinois Urbana-Champaign · 2022–2023</div>
+      <p class="tc-sum">Led discussion sections, office hours, and laboratory demonstrations for the core undergraduate Transportation Engineering course. Supported students through analytical problem sets, design exercises, and case studies connecting course theory to current IDOT and FHWA practice.</p>
     </div>
   </div>
-</section>
+</div></div>
 
-<!-- ══ JS ══ -->
+<div class="pq-wrap"><div class="pq fade-up">
+  <span class="pq-mark">"</span>
+  <p class="pq-text">Technical rigor is not the opposite of innovation — it is its precondition.</p>
+  <div class="pq-attr">— Renan Santos Maia · Engineering Philosophy</div>
+</div></div>
+
+<div class="sw" id="conferences"><div class="container">
+  <div class="sh fade-up"><span class="sn">05</span><h2 class="st">Conferences</h2><div class="ss">Presentations · Posters<br>Invited Talks</div></div>
+  <div class="sr"></div>
+  <div class="conf-grid">
+    <div class="conf-card fade-up">
+      <div class="conf-prev"><div class="conf-ph"><div class="conf-ph-icon">↑</div><span style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">Add image via Admin</span></div><div class="conf-bdg">Oral Presentation</div></div>
+      <div class="conf-body"><div class="conf-ev">Add Conference Name</div><h3 class="conf-title">Add Your Presentation Title Here</h3><div class="conf-meta">Location · Year</div><p class="conf-desc">Add abstract or short description. Upload via Admin panel.</p></div>
+    </div>
+    <div class="conf-card fade-up">
+      <div class="conf-prev"><div class="conf-ph"><div class="conf-ph-icon">↑</div><span style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">Add image via Admin</span></div><div class="conf-bdg">Poster</div></div>
+      <div class="conf-body"><div class="conf-ev">Add Conference Name</div><h3 class="conf-title">Add Your Poster Title Here</h3><div class="conf-meta">Location · Year</div><p class="conf-desc">Add abstract or short description. Upload via Admin panel.</p></div>
+    </div>
+    <div class="conf-card fade-up" style="border:2px dashed var(--rule);background:transparent;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.6rem;min-height:280px;">
+      <div style="font-family:var(--display);font-size:2.5rem;font-weight:900;color:var(--rule);line-height:1;">+</div>
+      <span style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-align:center;">Add conferences<br>via Admin panel</span>
+    </div>
+  </div>
+</div></div>
+
+<div class="sw dark" id="publications"><div class="container">
+  <div class="sh fade-up"><span class="sn lt">06</span><h2 class="st lt">Publications</h2><div class="ss lt">10 Journal Articles<br>Full list on Google Scholar</div></div>
+  <div class="sr lt"></div>
+  <div class="pub-feat fade-up">
+    <div class="pfc"><div class="pfc-label">Featured · International Journal of Pavement Engineering · 2024</div><div class="pfc-title">Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction</div><div class="pfc-auth">Santos Maia, R., Hajj, R. M., Cunto, F. J. C., &amp; Castelo Branco, V. T. F.</div><div class="pfc-venue">Int. J. Pavement Engineering, 25(1), 1–15</div><a href="https://doi.org/10.1080/10298436.2024.2345138" target="_blank" class="pdoi">doi:10.1080/10298436.2024.2345138 →</a></div>
+    <div class="pfc"><div class="pfc-label">Featured · Canadian Journal of Civil Engineering · 2024</div><div class="pfc-title">Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for mechanistic–empirical flexible pavement design in Illinois</div><div class="pfc-auth">Santos Maia, R., &amp; Hajj, R.</div><div class="pfc-venue">Canadian J. Civil Engineering, 51(7), 645–658</div><a href="https://doi.org/10.1139/cjce-2024-0299" target="_blank" class="pdoi">doi:10.1139/cjce-2024-0299 →</a></div>
+  </div>
+  <div class="pub-all-hd">All Publications</div>
+  <div class="pub-list">
+    <div class="pub-row fade-up"><div class="prn">01</div><div><div class="prt">Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction</div><div class="prv">International Journal of Pavement Engineering · Santos Maia, R. et al.</div></div><div class="pry">2024</div></div>
+    <div class="pub-row fade-up"><div class="prn">02</div><div><div class="prt">Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for ME flexible pavement design in Illinois</div><div class="prv">Canadian Journal of Civil Engineering · Santos Maia, R. &amp; Hajj, R.</div></div><div class="pry">2024</div></div>
+    <div class="pub-row fade-up"><div class="prn">03</div><div><div class="prt">Porous asphalt mixture performance in cold regions: Case study of Chicago</div><div class="prv">Case Studies in Construction Materials · Santos Maia, R., Lu, Y., &amp; Hajj, R. M.</div></div><div class="pry">2024</div></div>
+    <div class="pub-row fade-up"><div class="prn">04</div><div><div class="prt">Shape properties validation of virtual 3D particles from AIMS 2D images for railway ballast DEM modeling</div><div class="prv">Granular Matter · Fernandes Diógenes, D., Santos Maia, R., et al.</div></div><div class="pry">2025</div></div>
+    <div class="pub-row fade-up"><div class="prn">05</div><div><div class="prt">Backcalculation of asphalt concrete Poisson's ratio using the ultrasonic pulse velocity test</div><div class="prv">Materials and Structures · Lu, Y., Santos Maia, R., &amp; Hajj, R. M.</div></div><div class="pry">2024</div></div>
+    <div class="pub-row fade-up"><div class="prn">06</div><div><div class="prt">Cracking potential evaluation of recycled asphalt materials using the poker chip test and I–FIT</div><div class="prv">Road Materials and Pavement Design · Vyas, A., Santos Maia, R., &amp; Hajj, R.</div></div><div class="pry">2024</div></div>
+    <div class="pub-row fade-up"><div class="prn">07</div><div><div class="prt">Multiscale evaluation of asphalt binder rejuvenation dosing and efficacy</div><div class="prv">Construction and Building Materials · Lu, Y., Santos Maia, R., &amp; Hajj, R.</div></div><div class="pry">2023</div></div>
+    <div class="pub-row fade-up"><div class="prn">08</div><div><div class="prt">Emulsion mixtures of fractionated reclaimed asphalt pavement and quarry by-products</div><div class="prv">Sustainability · Husain, S. F., Qamhia, I. I., Vyas, A., Santos Maia, R., et al.</div></div><div class="pry">2023</div></div>
+    <div class="pub-row fade-up"><div class="prn">09</div><div><div class="prt">3D pavement macrotexture parameters from close-range photogrammetry</div><div class="prv">International Journal of Pavement Engineering · Medeiros Jr, M., Santos Maia, R., et al.</div></div><div class="pry">2023</div></div>
+    <div class="pub-row fade-up"><div class="prn">10</div><div><div class="prt">Relating weather conditions, drivers' behavior, and tire–pavement friction to microscopic simulated vehicular conflicts</div><div class="prv">Journal of Transportation Engineering, Part B: Pavements · Santos Maia, R. et al.</div></div><div class="pry">2021</div></div>
+  </div>
+  <div style="text-align:center;margin-top:3rem;"><a href="https://scholar.google.com/YOUR_PROFILE" target="_blank" class="c-email">Full list on Google Scholar →</a></div>
+</div></div>
+
+<div class="sw" id="personal"><div class="container">
+  <div class="sh fade-up"><span class="sn">07</span><h2 class="st">Personal</h2><div class="ss">Beyond the Lab<br>&amp; the Office</div></div>
+  <div class="sr"></div>
+  <div class="personal-grid">
+    <div>
+      <p class="personal-lede fade-up">I am Brazilian. I have lived in the UK and the American Midwest. <em>Moving between cultures is one of the best engineering educations I have had.</em></p>
+      <div class="personal-body fade-up">
+        <p>It teaches you to listen carefully, communicate across difference, and find common ground quickly — skills I consider just as critical in engineering as any technical method. Every project involves people with different priorities, backgrounds, and pressures. The ability to navigate that is not soft; it is structural.</p>
+        <p>My teaching experience reinforced this. Making complex mechanics intuitive to skeptical undergraduates trains a communicative patience that carries directly into project teams, client meetings, and field coordination. I am the kind of engineer who finds the solution with the team, not around it.</p>
+        <p>I thrive in dynamic, high-energy environments. Big cities energize me — the density, the complexity, the pace. I am fully open to relocating, and drawn to the problems that only dense urban infrastructure creates: constrained sites, competing stakeholder interests, legacy systems, and solutions that must be simultaneously rigorous and deployable.</p>
+        <p>Outside of work, I run long distances — which has taught me more about pacing, endurance, and honest self-assessment than almost anything else. I explore cities on foot, which turns out to be an excellent way to develop opinions about pavement quality.</p>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="pf"><div class="pf-label">Based in</div><div class="pf-val">Urbana, IL → Anywhere</div></div>
+      <div class="pf"><div class="pf-label">Countries lived &amp; worked</div><div class="pf-val">Brazil · UK · USA</div></div>
+      <div class="pf"><div class="pf-label">Languages</div><div class="pf-val">PT · EN · ES · FR (basic)</div></div>
+      <div class="pf"><div class="pf-label">Outside the lab</div><div class="pf-val">Long-distance running, cities on foot, mentoring students</div></div>
+      <div class="pf"><div class="pf-label">Professional track</div><div class="pf-val">FE exam → PE licensure</div></div>
+      <div class="pf"><div class="pf-label">Available</div><div class="pf-val">Summer / Fall 2026</div></div>
+    </div>
+  </div>
+</div></div>
+
+<div class="cw" id="contact"><div class="ci">
+  <div class="c-pre">Open to industry opportunities — Starting July 2026</div>
+  <h2 class="c-head">Let's Build.</h2>
+  <p class="c-sub">Civil Engineer · PhD Candidate · UIUC<br>Transportation Engineering · Pavement Design, Evaluation & Rehabilitaton · Geotechnics · Sustainability</p>
+  <a href="mailto:rmaia2@illinois.edu" class="c-email">rmaia2@illinois.edu</a>
+  <div class="c-links">
+    <a href="tel:+12179531792" class="c-link">+1 (217) 953-1792</a>
+    <a href="https://linkedin.com/in/renan-santos-maia-2450b3106/" target="_blank" class="c-link">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=1jSXQO4AAAAJ&hl=pt-BR" target="_blank" class="c-link">Google Scholar</a>
+    <a href="https://researchgate.net/profile/profile/Renan-Maia" target="_blank" class="c-link">ResearchGate</a>
+    <a href="pt/index.html" class="c-link">&#x1F1E7;&#x1F1F7; Versão em Português</a>
+  </div>
+  <div class="c-foot">Renan Santos Maia · 2026 · <a href="admin/index.html">Admin</a></div>
+</div></div>
+
 <script>
-  // Scroll-triggered fade-up
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('vis'), (i % 5) * 80);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Nav active state
-  const sections = document.querySelectorAll('section[id], div[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  const navObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(a => {
-          a.style.color = a.getAttribute('href') === '#' + entry.target.id
-            ? 'var(--accent)' : '';
-        });
-      }
-    });
-  }, { threshold: 0.4 });
-  sections.forEach(s => navObs.observe(s));
-</script>
-   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-   <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
+  const obs=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting)setTimeout(()=>el.target.classList.add('vis'),(i%4)*90);});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  const secs=document.querySelectorAll('[id]');
+  const lks=document.querySelectorAll('.nav-links a');
+  const nobs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting)lks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+el.target.id?'var(--gold)':'';});});},{threshold:0.35});
+  secs.forEach(s=>nobs.observe(s));
+  if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
 </script>
 </body>
 </html>
