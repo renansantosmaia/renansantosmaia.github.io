@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renan Santos Maia — Engenheiro Civil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,900;1,300;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Reuse all CSS from parent -->
+<link rel="stylesheet" href="../assets/css/main.css">
+<style>
+/* Inline all styles for standalone operation — identical to index.html */
+/* [TRANSLATION NOTE: This file mirrors index.html structurally.
+   Replace all English text below with Portuguese translations.
+   CSS is identical — do not modify. ] */
+
+/* ══ Paste full <style> block from index.html here ══ */
+/* For brevity in this scaffold, the PT page loads identically styled content. */
+/* Full inline styles are in index.html — copy that file and translate text nodes. */
+
+:root {
+  --ink:#0a0a0a;--ink2:#1a1a1a;--ink3:#2e2e2e;--rule:#d0ccc4;--rule2:#e8e4de;
+  --paper:#f5f2ed;--paper2:#ede9e2;--muted:#7a7670;--accent:#C8102E;--accent2:#a00c24;--white:#ffffff;
+  --display:'Barlow Condensed','Arial Narrow',sans-serif;
+  --serif:'Libre Baskerville',Georgia,serif;
+  --mono:'DM Mono','Courier New',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+.container{max-width:1280px;margin:0 auto;padding:0 3rem;}
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--ink);border-bottom:2px solid var(--accent);}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 3rem;}
+.nav-logo{font-family:var(--display);font-size:1.15rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);}
+.nav-lang{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.15);padding:0.25rem 0.65rem;}
+#hero{background:var(--ink);padding:9rem 0 0;overflow:hidden;}
+.hero-masthead{max-width:1280px;margin:0 auto;padding:0 3rem 2rem;border-bottom:1px solid var(--ink3);display:flex;align-items:flex-end;justify-content:space-between;}
+.hero-issue{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);line-height:2;}
+.hero-issue em{color:var(--accent);font-style:normal;}
+.hero-social{display:flex;gap:1.5rem;}
+.hero-social a{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+.hero-main{max-width:1280px;margin:0 auto;padding:3rem 3rem 0;}
+h1.hero-name{font-family:var(--display);font-size:clamp(5.5rem,11vw,13rem);font-weight:900;line-height:0.88;text-transform:uppercase;color:var(--white);}
+h1.hero-name .accent-line{color:var(--accent);}
+h1.hero-name .italic-line{font-style:italic;font-weight:300;color:rgba(255,255,255,0.35);display:block;font-size:0.55em;}
+.hero-descriptor{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--ink3);display:flex;gap:3rem;}
+.hero-tagline{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:rgba(255,255,255,0.5);max-width:460px;line-height:1.65;}
+.hero-facts{display:flex;flex-direction:column;gap:0.5rem;flex-shrink:0;}
+.hero-fact{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);display:flex;align-items:center;gap:0.6rem;}
+.hero-fact::before{content:'';display:inline-block;width:16px;height:1px;background:var(--accent);flex-shrink:0;}
+.hero-stats-bar{background:var(--accent);margin-top:3rem;}
+.hero-stats-inner{max-width:1280px;margin:0 auto;padding:0 3rem;display:grid;grid-template-columns:repeat(4,1fr);}
+.hero-stat{padding:1.4rem 0 1.4rem 2rem;border-right:1px solid rgba(255,255,255,0.2);}
+.hero-stat:first-child{padding-left:0;}
+.hero-stat:last-child{border-right:none;}
+.hero-stat-num{font-family:var(--display);font-size:2.8rem;font-weight:900;color:var(--white);line-height:1;}
+.hero-stat-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-top:0.2rem;}
+section{padding:6rem 0;}
+.section-header{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;margin-bottom:4rem;}
+.section-num{font-family:var(--display);font-size:5rem;font-weight:900;line-height:1;color:var(--rule2);}
+h2.section-title{font-family:var(--display);font-size:clamp(2.2rem,4vw,4rem);font-weight:700;text-transform:uppercase;color:var(--ink);}
+.section-title-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:1.8;}
+.pullquote-section{padding:5rem 0;background:var(--paper2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.pullquote{max-width:860px;margin:0 auto;text-align:center;padding:0 3rem;}
+.pullquote-mark{font-family:var(--display);font-size:6rem;font-weight:900;color:var(--accent);line-height:0.5;display:block;margin-bottom:1rem;}
+.pullquote-text{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.8rem);font-weight:600;font-style:italic;color:var(--ink);line-height:1.25;}
+.pullquote-attribution{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:1.5rem;}
+#contact{background:var(--ink);padding:6rem 0 4rem;}
+.contact-inner{text-align:center;max-width:700px;margin:0 auto;padding:0 3rem;}
+.contact-pre{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+h2.contact-heading{font-family:var(--display);font-size:clamp(3rem,6vw,6rem);font-weight:900;text-transform:uppercase;color:var(--white);line-height:0.9;margin-bottom:2rem;}
+.contact-sub{font-family:var(--serif);font-style:italic;font-size:1rem;color:rgba(255,255,255,0.4);margin-bottom:3rem;line-height:1.6;}
+.contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-bottom:4rem;}
+.contact-link{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);border:1px solid var(--ink3);padding:0.7rem 1.4rem;transition:all 0.2s;}
+.contact-cta{display:inline-block;background:var(--accent);font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--white);padding:1rem 2.5rem;margin-bottom:4rem;}
+.footer-rule{border-top:1px solid var(--ink3);padding-top:2rem;}
+.footer-line{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.2);text-align:center;}
+.footer-line a{color:var(--accent);}
+.notice-banner{background:rgba(200,16,46,0.08);border:1px dashed rgba(200,16,46,0.3);padding:1.5rem 2rem;margin:2rem 0;font-family:var(--mono);font-size:0.7rem;color:var(--accent);letter-spacing:0.06em;line-height:1.8;border-radius:2px;}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Renan <span>Santos</span> Maia</div>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#pesquisa">Pesquisa</a></li>
+      <li><a href="#ensino">Ensino</a></li>
+      <li><a href="#conferencias">Conferências</a></li>
+      <li><a href="#publicacoes">Publicações</a></li>
+      <li><a href="#pessoal">Pessoal</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="../index.html" class="nav-lang">EN →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding-top:9rem; padding-bottom:0;">
+  <div class="hero-masthead">
+    <div class="hero-issue">
+      <div>Engenheiro Civil · Doutorando</div>
+      <div>University of Illinois Urbana-Champaign</div>
+      <div><em>#1</em> Programa de Engenharia Civil dos EUA — 2025 e 2026</div>
+    </div>
+    <div class="hero-social">
+      <a href="mailto:rmaia2@illinois.edu">E-mail</a>
+      <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank">LinkedIn</a>
+      <a href="https://scholar.google.com" target="_blank">Scholar</a>
+      <a href="https://researchgate.net" target="_blank">ResearchGate</a>
+    </div>
+  </div>
+  <div class="hero-main">
+    <h1 class="hero-name">
+      <span>Renan</span><br>
+      <span class="accent-line">Santos</span><br>
+      <span>Maia</span>
+      <span class="italic-line">Engenheiro Civil · Doutorando</span>
+    </h1>
+    <div class="hero-descriptor">
+      <p class="hero-tagline">
+        Infraestrutura de transportes, engenharia de pavimentos e sistemas geotécnicos — do espécime laboratorial à decisão em rede.
+      </p>
+      <div class="hero-facts">
+        <div class="hero-fact">UIUC — Conclusão prevista 2026</div>
+        <div class="hero-fact">+10 anos de experiência</div>
+        <div class="hero-fact">3 países</div>
+        <div class="hero-fact">Disponível para realocação</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-stats-bar">
+    <div class="hero-stats-inner">
+      <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Artigos revisados por pares</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">Projetos DOT aplicados</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">3.93</div><div class="hero-stat-label">GPA do Doutoramento / 4.00</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">2026</div><div class="hero-stat-label">Conclusão prevista</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSLATION NOTICE -->
+<div class="container">
+  <div class="notice-banner">
+    🇧🇷 PÁGINA EM CONSTRUÇÃO — VERSÃO EM PORTUGUÊS<br>
+    Esta página está estruturada e pronta para tradução. Substitua o texto em inglês abaixo pelo conteúdo em português.<br>
+    Todo o conteúdo pode ser editado via painel Admin: <a href="../admin/index.html" style="color:var(--accent);">../admin</a>
+  </div>
+</div>
+
+<!-- PULLQUOTE -->
+<div class="pullquote-section">
+  <div class="pullquote">
+    <span class="pullquote-mark">"</span>
+    <p class="pullquote-text">O rigor técnico não é o oposto da inovação — é a sua precondição.</p>
+    <div class="pullquote-attribution">— Renan Santos Maia · Filosofia de Engenharia</div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contato">
+  <div class="contact-inner">
+    <div class="contact-pre">Aberto a oportunidades na indústria — 2026</div>
+    <h2 class="contact-heading">Vamos Construir<br>Juntos.</h2>
+    <p class="contact-sub">Engenheiro Civil · Doutorando · UIUC<br>Transportes · Pavimentos · Geotecnia · Obras Civis</p>
+    <a href="mailto:rmaia2@illinois.edu" class="contact-cta">rmaia2@illinois.edu</a>
+    <div class="contact-links">
+      <a href="tel:+12179531792" class="contact-link">+1 (217) 953-1792</a>
+      <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank" class="contact-link">LinkedIn</a>
+      <a href="https://scholar.google.com" target="_blank" class="contact-link">Google Scholar</a>
+      <a href="../index.html" class="contact-link">🇺🇸 English Version</a>
+    </div>
+    <div class="footer-rule">
+      <div class="footer-line">
+        Renan Santos Maia · Portfólio de Engenharia Civil · 2026 ·
+        <a href="../admin/index.html">Admin</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

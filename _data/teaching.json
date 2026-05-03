@@ -1,0 +1,20 @@
+[
+  {
+    "role": "Instructor of Record",
+    "code": "CEE 405",
+    "course": "Asphalt Materials",
+    "institution": "University of Illinois Urbana-Champaign",
+    "period": "2024–2025",
+    "summary": "Sole instructor for the undergraduate Asphalt Materials course at UIUC's Grainger College of Engineering. Developed and delivered lectures, laboratory sessions, and design problem modules grounded in real-world DOT datasets and contemporary infrastructure challenges. Emphasized hands-on laboratory experience and project-based learning to build both technical competence and analytical confidence.",
+    "order": 1
+  },
+  {
+    "role": "Teaching Assistant",
+    "code": "CEE 310",
+    "course": "Transportation Engineering",
+    "institution": "University of Illinois Urbana-Champaign",
+    "period": "2022–2023",
+    "summary": "Teaching assistant for the core undergraduate Transportation Engineering course. Led discussion sections, office hours, and laboratory demonstrations. Supported students through analytical problem sets, design exercises, and research-informed case studies connecting course theory to current IDOT and FHWA practice.",
+    "order": 2
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "ADD YOUR PRESENTATION TITLE HERE",
+    "event": "ADD CONFERENCE NAME (e.g. Transportation Research Board Annual Meeting)",
+    "location": "Washington, D.C., USA",
+    "year": "2025",
+    "type": "Oral Presentation",
+    "description": "Add abstract or short description here.",
+    "file": "",
+    "preview": ""
+  },
+  {
+    "title": "ADD YOUR POSTER TITLE HERE",
+    "event": "ADD CONFERENCE NAME",
+    "location": "ADD LOCATION",
+    "year": "2024",
+    "type": "Poster",
+    "description": "Add abstract or short description here.",
+    "file": "",
+    "preview": ""
+  }
+]

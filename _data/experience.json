@@ -1,0 +1,36 @@
+[
+  {
+    "role": "Junior Civil Engineer",
+    "company": "Vetor Engenharia & Transnordestina Logística",
+    "location": "Brazil",
+    "period": "2019–2020",
+    "type": "Railway Design & Construction",
+    "summary": "Worked on the engineering team for the Transnordestina Railway — then the largest railway under active construction in Brazil (~1,700 km). The project connected agricultural production regions in northeastern Brazil to Atlantic export ports, carrying national economic significance. Responsibilities spanned the full civil scope of the infrastructure: earthworks, soil analysis and granular layer design, rail superstructure, surface and subsurface drainage, bridges, viaducts, tunnels, and signaling systems.",
+    "highlights": [
+      "Review and adaptation of executive designs across earthworks, drainage, and rail superstructure scopes",
+      "Regulatory compliance review and preparation of as-built documentation for active construction fronts",
+      "Quantity surveying and cost tracking across multiple simultaneous construction zones",
+      "Soil analysis and granular layer evaluation for subgrade and sub-ballast design",
+      "Coordination with multidisciplinary teams across structural, drainage, and signaling scopes"
+    ],
+    "image": "",
+    "order": 1
+  },
+  {
+    "role": "Civil Engineering Intern",
+    "company": "Installe Engenharia",
+    "location": "Fortaleza, Brazil",
+    "period": "2017",
+    "type": "Asphalt Plant & Paving Contractor",
+    "summary": "Extensive field and plant experience in asphalt concrete production and flexible pavement construction, including airport runway trial sections. Responsible for laboratory QA/QC of asphalt mixtures, compaction monitoring, mineral skeleton optimization, and surface texture and friction evaluation. Pioneered the local introduction of advanced pavement surface technologies.",
+    "highlights": [
+      "Led mix design and implementation of the first Porous Friction Course (OGFC) sections in Fortaleza — a genuine local first",
+      "Led design activities for the first Highly Modified Asphalt Binder pavement sections in the city",
+      "QA/QC oversight of asphalt production and field compaction for airport runway pavement trial sections",
+      "Laboratory analysis for mineral skeleton optimization (aggregate gradation and compactability)",
+      "Surface texture and friction evaluation on completed pavement sections"
+    ],
+    "image": "",
+    "order": 2
+  }
+]
