@@ -9,87 +9,99 @@ public_folder: "/assets/images"
 collections:
   - name: "experience"
     label: "Work Experience (Industry)"
-    folder: "_data/experience"
-    create: true
-    slug: "{{slug}}"
+    file: "_data/experience.json"
     fields:
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Company", name: "company", widget: "string" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Period", name: "period", widget: "string" }
-      - { label: "Type", name: "type", widget: "string", hint: "e.g. Industry · Design · Construction" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - label: "Highlights"
-        name: "highlights"
+      - label: "Work Experience"
+        name: "experiences"
         widget: "list"
-        field: { label: "Item", name: "item", widget: "string" }
-      - { label: "Image", name: "image", widget: "image", required: false }
-      - { label: "Order", name: "order", widget: "number", default: 0 }
+        fields:
+          - { label: "Role", name: "role", widget: "string" }
+          - { label: "Company", name: "company", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Period", name: "period", widget: "string" }
+          - { label: "Type", name: "type", widget: "string", hint: "e.g. Industry · Design · Construction" }
+          - { label: "Summary", name: "summary", widget: "text" }
+          - label: "Highlights"
+            name: "highlights"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Order", name: "order", widget: "number", default: 0 }
 
   - name: "research"
     label: "Research Projects"
-    folder: "_data/research"
-    create: true
-    slug: "{{slug}}"
+    file: "_data/research.json"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Client / Sponsor", name: "client", widget: "string" }
-      - { label: "Period", name: "period", widget: "string" }
-      - { label: "Type", name: "type", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - label: "Outcomes"
-        name: "outcomes"
+      - label: "Research Projects"
+        name: "projects"
         widget: "list"
-        field: { label: "Outcome", name: "outcome", widget: "string" }
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-        field: { label: "Tag", name: "tag", widget: "string" }
-      - { label: "Image", name: "image", widget: "image", required: false }
-      - { label: "Order", name: "order", widget: "number", default: 0 }
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Client / Sponsor", name: "client", widget: "string" }
+          - { label: "Period", name: "period", widget: "string" }
+          - { label: "Type", name: "type", widget: "string" }
+          - { label: "Summary", name: "summary", widget: "text" }
+          - label: "Outcomes"
+            name: "outcomes"
+            widget: "list"
+            field: { label: "Outcome", name: "outcome", widget: "string" }
+          - label: "Tags"
+            name: "tags"
+            widget: "list"
+            field: { label: "Tag", name: "tag", widget: "string" }
+          - { label: "Image", name: "image", widget: "image", required: false }
+          - { label: "Order", name: "order", widget: "number", default: 0 }
 
   - name: "teaching"
     label: "Teaching Experience"
-    folder: "_data/teaching"
-    create: true
-    slug: "{{slug}}"
+    file: "_data/teaching.json"
     fields:
-      - { label: "Role", name: "role", widget: "string" }
-      - { label: "Course Code", name: "code", widget: "string" }
-      - { label: "Course Name", name: "course", widget: "string" }
-      - { label: "Institution", name: "institution", widget: "string" }
-      - { label: "Period", name: "period", widget: "string" }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Order", name: "order", widget: "number", default: 0 }
+      - label: "Teaching Experience"
+        name: "teaching"
+        widget: "list"
+        fields:
+          - { label: "Role", name: "role", widget: "string" }
+          - { label: "Course Code", name: "code", widget: "string" }
+          - { label: "Course Name", name: "course", widget: "string" }
+          - { label: "Institution", name: "institution", widget: "string" }
+          - { label: "Period", name: "period", widget: "string" }
+          - { label: "Summary", name: "summary", widget: "text" }
+          - { label: "Order", name: "order", widget: "number", default: 0 }
 
   - name: "conferences"
     label: "Conferences & Presentations"
-    folder: "_data/conferences"
-    create: true
-    slug: "{{slug}}"
+    file: "_data/conferences.json"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Event", name: "event", widget: "string" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Year", name: "year", widget: "string" }
-      - { label: "Type", name: "type", widget: "select", options: ["Oral Presentation", "Poster", "Invited Talk", "Workshop"] }
-      - { label: "Abstract / Description", name: "description", widget: "text", required: false }
-      - { label: "Poster / Slides File", name: "file", widget: "file", required: false }
-      - { label: "Poster / Slides Preview Image", name: "preview", widget: "image", required: false }
+      - label: "Conferences & Presentations"
+        name: "conferences"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Event", name: "event", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
+          - { label: "Year", name: "year", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Oral Presentation", "Poster", "Invited Talk", "Workshop"] }
+          - { label: "Abstract / Description", name: "description", widget: "text", required: false }
+          - { label: "Poster / Slides File", name: "file", widget: "file", required: false }
+          - { label: "Poster / Slides Preview Image", name: "preview", widget: "image", required: false }
+          - { label: "Order", name: "order", widget: "number", default: 0 }
 
   - name: "publications"
     label: "Publications"
-    folder: "_data/publications"
-    create: true
-    slug: "{{slug}}"
+    file: "_data/publications.json"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Authors", name: "authors", widget: "string" }
-      - { label: "Journal / Venue", name: "venue", widget: "string" }
-      - { label: "Year", name: "year", widget: "string" }
-      - { label: "DOI / URL", name: "doi", widget: "string", required: false }
-      - { label: "Type", name: "type", widget: "select", options: ["Journal Article", "Conference Paper", "Technical Report", "Thesis"] }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - label: "Publications"
+        name: "publications"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Authors", name: "authors", widget: "string" }
+          - { label: "Journal / Venue", name: "venue", widget: "string" }
+          - { label: "Year", name: "year", widget: "string" }
+          - { label: "DOI / URL", name: "doi", widget: "string", required: false }
+          - { label: "Type", name: "type", widget: "select", options: ["Journal Article", "Conference Paper", "Technical Report", "Thesis"] }
+          - { label: "Featured", name: "featured", widget: "boolean", default: false }
+          - { label: "Order", name: "order", widget: "number", default: 0 }
 
   - name: "settings"
     label: "Site Settings"
@@ -112,4 +124,4 @@ collections:
           - { label: "Bio (short)", name: "bio_short", widget: "text" }
           - { label: "Bio (full)", name: "bio_full", widget: "markdown" }
           - { label: "Personal / Story", name: "personal", widget: "markdown" }
-          - { label: "Accent Color (hex)", name: "accent", widget: "string", default: "#C8102E" }
+          - { label: "Accent Color (hex)", name: "accent", widget: "string", default: "#9d7c1a" }
