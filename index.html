@@ -514,43 +514,16 @@ h2.c-head{font-family:var(--display);font-size:clamp(3rem,6vw,6.2rem);font-weigh
 <div class="sw" id="conferences"><div class="container">
   <div class="sh fade-up"><span class="sn">05</span><h2 class="st">Conferences</h2><div class="ss">Presentations · Posters<br>Invited Talks</div></div>
   <div class="sr"></div>
-  <div class="conf-grid">
-    <div class="conf-card fade-up">
-      <div class="conf-prev"><div class="conf-ph"><div class="conf-ph-icon">↑</div><span style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">Add image via Admin</span></div><div class="conf-bdg">Oral Presentation</div></div>
-      <div class="conf-body"><div class="conf-ev">Add Conference Name</div><h3 class="conf-title">Add Your Presentation Title Here</h3><div class="conf-meta">Location · Year</div><p class="conf-desc">Add abstract or short description. Upload via Admin panel.</p></div>
-    </div>
-    <div class="conf-card fade-up">
-      <div class="conf-prev"><div class="conf-ph"><div class="conf-ph-icon">↑</div><span style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">Add image via Admin</span></div><div class="conf-bdg">Poster</div></div>
-      <div class="conf-body"><div class="conf-ev">Add Conference Name</div><h3 class="conf-title">Add Your Poster Title Here</h3><div class="conf-meta">Location · Year</div><p class="conf-desc">Add abstract or short description. Upload via Admin panel.</p></div>
-    </div>
-    <div class="conf-card fade-up" style="border:2px dashed var(--rule);background:transparent;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.6rem;min-height:280px;">
-      <div style="font-family:var(--display);font-size:2.5rem;font-weight:900;color:var(--rule);line-height:1;">+</div>
-      <span style="font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-align:center;">Add conferences<br>via Admin panel</span>
-    </div>
-  </div>
+  <div class="conf-grid" id="conf-grid"></div>
 </div></div>
 
 <div class="sw dark" id="publications"><div class="container">
-  <div class="sh fade-up"><span class="sn lt">06</span><h2 class="st lt">Publications</h2><div class="ss lt">10 Journal Articles<br>Full list on Google Scholar</div></div>
+  <div class="sh fade-up"><span class="sn lt">06</span><h2 class="st lt">Publications</h2><div class="ss lt">Journal Articles & Conference Proceedings<br>Full list on Google Scholar</div></div>
   <div class="sr lt"></div>
-  <div class="pub-feat fade-up">
-    <div class="pfc"><div class="pfc-label">Featured · International Journal of Pavement Engineering · 2024</div><div class="pfc-title">Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction</div><div class="pfc-auth">Santos Maia, R., Hajj, R. M., Cunto, F. J. C., &amp; Castelo Branco, V. T. F.</div><div class="pfc-venue">Int. J. Pavement Engineering, 25(1), 1–15</div><a href="https://doi.org/10.1080/10298436.2024.2345138" target="_blank" class="pdoi">doi:10.1080/10298436.2024.2345138 →</a></div>
-    <div class="pfc"><div class="pfc-label">Featured · Canadian Journal of Civil Engineering · 2024</div><div class="pfc-title">Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for mechanistic–empirical flexible pavement design in Illinois</div><div class="pfc-auth">Santos Maia, R., &amp; Hajj, R.</div><div class="pfc-venue">Canadian J. Civil Engineering, 51(7), 645–658</div><a href="https://doi.org/10.1139/cjce-2024-0299" target="_blank" class="pdoi">doi:10.1139/cjce-2024-0299 →</a></div>
-  </div>
+  <div class="pub-feat fade-up" id="pub-featured"></div>
   <div class="pub-all-hd">All Publications</div>
-  <div class="pub-list">
-    <div class="pub-row fade-up"><div class="prn">01</div><div><div class="prt">Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction</div><div class="prv">International Journal of Pavement Engineering · Santos Maia, R. et al.</div></div><div class="pry">2024</div></div>
-    <div class="pub-row fade-up"><div class="prn">02</div><div><div class="prt">Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for ME flexible pavement design in Illinois</div><div class="prv">Canadian Journal of Civil Engineering · Santos Maia, R. &amp; Hajj, R.</div></div><div class="pry">2024</div></div>
-    <div class="pub-row fade-up"><div class="prn">03</div><div><div class="prt">Porous asphalt mixture performance in cold regions: Case study of Chicago</div><div class="prv">Case Studies in Construction Materials · Santos Maia, R., Lu, Y., &amp; Hajj, R. M.</div></div><div class="pry">2024</div></div>
-    <div class="pub-row fade-up"><div class="prn">04</div><div><div class="prt">Shape properties validation of virtual 3D particles from AIMS 2D images for railway ballast DEM modeling</div><div class="prv">Granular Matter · Fernandes Diógenes, D., Santos Maia, R., et al.</div></div><div class="pry">2025</div></div>
-    <div class="pub-row fade-up"><div class="prn">05</div><div><div class="prt">Backcalculation of asphalt concrete Poisson's ratio using the ultrasonic pulse velocity test</div><div class="prv">Materials and Structures · Lu, Y., Santos Maia, R., &amp; Hajj, R. M.</div></div><div class="pry">2024</div></div>
-    <div class="pub-row fade-up"><div class="prn">06</div><div><div class="prt">Cracking potential evaluation of recycled asphalt materials using the poker chip test and I–FIT</div><div class="prv">Road Materials and Pavement Design · Vyas, A., Santos Maia, R., &amp; Hajj, R.</div></div><div class="pry">2024</div></div>
-    <div class="pub-row fade-up"><div class="prn">07</div><div><div class="prt">Multiscale evaluation of asphalt binder rejuvenation dosing and efficacy</div><div class="prv">Construction and Building Materials · Lu, Y., Santos Maia, R., &amp; Hajj, R.</div></div><div class="pry">2023</div></div>
-    <div class="pub-row fade-up"><div class="prn">08</div><div><div class="prt">Emulsion mixtures of fractionated reclaimed asphalt pavement and quarry by-products</div><div class="prv">Sustainability · Husain, S. F., Qamhia, I. I., Vyas, A., Santos Maia, R., et al.</div></div><div class="pry">2023</div></div>
-    <div class="pub-row fade-up"><div class="prn">09</div><div><div class="prt">3D pavement macrotexture parameters from close-range photogrammetry</div><div class="prv">International Journal of Pavement Engineering · Medeiros Jr, M., Santos Maia, R., et al.</div></div><div class="pry">2023</div></div>
-    <div class="pub-row fade-up"><div class="prn">10</div><div><div class="prt">Relating weather conditions, drivers' behavior, and tire–pavement friction to microscopic simulated vehicular conflicts</div><div class="prv">Journal of Transportation Engineering, Part B: Pavements · Santos Maia, R. et al.</div></div><div class="pry">2021</div></div>
-  </div>
-  <div style="text-align:center;margin-top:3rem;"><a href="https://scholar.google.com/YOUR_PROFILE" target="_blank" class="c-email">Full list on Google Scholar →</a></div>
+  <div class="pub-list" id="pub-list"></div>
+  <div style="text-align:center;margin-top:3rem;"><a href="https://scholar.google.com/citations?user=1jSXQO4AAAAJ&hl=en" target="_blank" class="c-email">Full list on Google Scholar →</a></div>
 </div></div>
 
 <div class="sw" id="personal"><div class="container">
@@ -563,14 +536,14 @@ h2.c-head{font-family:var(--display);font-size:clamp(3rem,6vw,6.2rem);font-weigh
         <p>It teaches you to listen carefully, communicate across difference, and find common ground quickly — skills I consider just as critical in engineering as any technical method. Every project involves people with different priorities, backgrounds, and pressures. The ability to navigate that is not soft; it is structural.</p>
         <p>My teaching experience reinforced this. Making complex mechanics intuitive to skeptical undergraduates trains a communicative patience that carries directly into project teams, client meetings, and field coordination. I am the kind of engineer who finds the solution with the team, not around it.</p>
         <p>I thrive in dynamic, high-energy environments. Big cities energize me — the density, the complexity, the pace. I am fully open to relocating, and drawn to the problems that only dense urban infrastructure creates: constrained sites, competing stakeholder interests, legacy systems, and solutions that must be simultaneously rigorous and deployable.</p>
-        <p>Outside of work, I run long distances — which has taught me more about pacing, endurance, and honest self-assessment than almost anything else. I explore cities on foot, which turns out to be an excellent way to develop opinions about pavement quality.</p>
+        <p>Outside of work, I am energized by sports, fitness, and people. I work out regularly and love lifting — discipline and consistency in the gym translate directly to how I approach engineering problems. As a former high school volleyball athlete, I still carry that competitive spirit and team mentality. I am passionate about socializing, spending time with friends, and sharing good moments. Music and exploring cities on foot are how I recharge — and yes, walking through cities is an excellent way to develop opinions about pavement quality.</p>
       </div>
     </div>
     <div class="fade-up">
       <div class="pf"><div class="pf-label">Based in</div><div class="pf-val">Urbana, IL → Anywhere</div></div>
       <div class="pf"><div class="pf-label">Countries lived &amp; worked</div><div class="pf-val">Brazil · UK · USA</div></div>
       <div class="pf"><div class="pf-label">Languages</div><div class="pf-val">PT · EN · ES · FR (basic)</div></div>
-      <div class="pf"><div class="pf-label">Outside the lab</div><div class="pf-val">Long-distance running, cities on foot, mentoring students</div></div>
+      <div class="pf"><div class="pf-label">Outside the lab</div><div class="pf-val">Strength training, sports, friends &amp; music, exploring cities</div></div>
       <div class="pf"><div class="pf-label">Professional track</div><div class="pf-val">FE exam → PE licensure</div></div>
       <div class="pf"><div class="pf-label">Available</div><div class="pf-val">Summer / Fall 2026</div></div>
     </div>
@@ -578,18 +551,18 @@ h2.c-head{font-family:var(--display);font-size:clamp(3rem,6vw,6.2rem);font-weigh
 </div></div>
 
 <div class="cw" id="contact"><div class="ci">
-  <div class="c-pre">Open to industry opportunities — Starting July 2026</div>
-  <h2 class="c-head">Let's Build.</h2>
-  <p class="c-sub">Civil Engineer · PhD Candidate · UIUC<br>Transportation Engineering · Pavement Design, Evaluation & Rehabilitaton · Geotechnics · Sustainability</p>
+  <div class="c-pre">Open to industry opportunities — 2026</div>
+  <h2 class="c-head">Let's Build<br>Something.</h2>
+  <p class="c-sub">Civil Engineer · PhD Candidate · UIUC<br>Transportation · Pavement · Geotechnical · Site Civil</p>
   <a href="mailto:rmaia2@illinois.edu" class="c-email">rmaia2@illinois.edu</a>
   <div class="c-links">
     <a href="tel:+12179531792" class="c-link">+1 (217) 953-1792</a>
-    <a href="https://linkedin.com/in/renan-santos-maia-2450b3106/" target="_blank" class="c-link">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=1jSXQO4AAAAJ&hl=pt-BR" target="_blank" class="c-link">Google Scholar</a>
-    <a href="https://researchgate.net/profile/profile/Renan-Maia" target="_blank" class="c-link">ResearchGate</a>
+    <a href="https://linkedin.com/in/YOUR_HANDLE" target="_blank" class="c-link">LinkedIn</a>
+    <a href="https://scholar.google.com/YOUR_PROFILE" target="_blank" class="c-link">Google Scholar</a>
+    <a href="https://researchgate.net/profile/YOUR_PROFILE" target="_blank" class="c-link">ResearchGate</a>
     <a href="pt/index.html" class="c-link">&#x1F1E7;&#x1F1F7; Versão em Português</a>
   </div>
-  <div class="c-foot">Renan Santos Maia · 2026 · <a href="admin/index.html">Admin</a></div>
+  <div class="c-foot">Renan Santos Maia · Civil Engineering Portfolio · 2026 · <a href="admin/index.html">Admin</a></div>
 </div></div>
 
 <script>
@@ -599,6 +572,48 @@ h2.c-head{font-family:var(--display);font-size:clamp(3rem,6vw,6.2rem);font-weigh
   const lks=document.querySelectorAll('.nav-links a');
   const nobs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting)lks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+el.target.id?'var(--gold)':'';});});},{threshold:0.35});
   secs.forEach(s=>nobs.observe(s));
+  
+  // Load conferences from JSON
+  fetch('/_data/conferences.json').then(r=>r.json()).then(data=>{
+    const grid=document.getElementById('conf-grid');
+    if(!grid||!data.conferences)return;
+    grid.innerHTML='';
+    data.conferences.forEach(c=>{
+      const card=document.createElement('div');
+      card.className='conf-card fade-up';
+      const preview=c.preview?`<img src="${c.preview}" alt="${c.title}" style="width:100%;height:100%;object-fit:cover;">`:`<div class="conf-ph"><div class="conf-ph-icon">↑</div></div>`;
+      card.innerHTML=`<div class="conf-prev">${preview}<div class="conf-bdg">${c.type}</div></div><div class="conf-body"><div class="conf-ev">${c.event}</div><h3 class="conf-title">${c.title}</h3><div class="conf-meta">${c.location} · ${c.year}</div><p class="conf-desc">${c.description}</p></div>`;
+      grid.appendChild(card);
+      obs.observe(card);
+    });
+  }).catch(e=>console.log('Conferences data not found',e));
+  
+  // Load publications from JSON
+  fetch('/_data/publications.json').then(r=>r.json()).then(data=>{
+    const featured=document.getElementById('pub-featured');
+    const list=document.getElementById('pub-list');
+    if(!featured||!list||!data.publications)return;
+    featured.innerHTML='';
+    list.innerHTML='';
+    let num=1;
+    data.publications.forEach(p=>{
+      if(p.featured){
+        const fcard=document.createElement('div');
+        fcard.className='pfc';
+        const doiLink=p.doi?`<a href="${p.doi}" target="_blank" class="pdoi">doi:${p.doi.split('/').pop()} →</a>`:'';
+        fcard.innerHTML=`<div class="pfc-label">Featured · ${p.venue} · ${p.year}</div><div class="pfc-title">${p.title}</div><div class="pfc-auth">${p.authors}</div><div class="pfc-venue">${p.venue}</div>${doiLink}`;
+        featured.appendChild(fcard);
+      }
+      const row=document.createElement('div');
+      row.className='pub-row fade-up';
+      const doiLink=p.doi?`<a href="${p.doi}" target="_blank" style="color:var(--gold);font-family:var(--mono);font-size:0.75rem;">doi →</a>`:'';
+      row.innerHTML=`<div class="prn">${String(num).padStart(2,'0')}</div><div><div class="prt">${p.title}</div><div class="prv">${p.venue} · ${p.authors}</div>${doiLink}</div><div class="pry">${p.year}</div>`;
+      list.appendChild(row);
+      obs.observe(row);
+      num++;
+    });
+  }).catch(e=>console.log('Publications data not found',e));
+  
   if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
 </script>
 </body>
