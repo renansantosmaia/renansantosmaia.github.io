@@ -7,6 +7,7 @@
       "year": "2026",
       "type": "Poster",
       "description": "Co-authored with Bibek Regmi and Ramez Hajj. Assessed poker chip parameters to distinguish between fillers and modifiers in terms of base binders and aging levels of mastics. Crumb rubber showed the best ductility and strongest anti-aging performance.",
+      "preview": "/assets/images/poster_1_fillers_crumb_rubber.png",
       "order": 1
     },
     {
@@ -16,6 +17,7 @@
       "year": "2026",
       "type": "Poster",
       "description": "Co-authored with Bibek Regmi and Ramez Hajj. Assessed moisture resistance and aging benefits of hydrated lime using field-representative lab protocols and layered compaction on carbonate aggregates typical for Illinois.",
+      "preview": "/assets/images/poster_2_hydrated_lime.png",
       "order": 2
     },
     {
@@ -25,6 +27,7 @@
       "year": "2026",
       "type": "Poster",
       "description": "Co-authored with Bibek Regmi and Ramez Hajj. Evaluated healing potential of asphalt concrete mixes subjected to fatigue damage and moisture conditioning using adapted AASHTO T321-22 and healing induction protocols.",
+      "preview": "/assets/images/poster_3_saturation_healing.png",
       "order": 3
     }
   ]
