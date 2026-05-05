@@ -1,21 +1,21 @@
 {
   "publications": [
     {
-      "title": "Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction",
-      "authors": "Santos Maia, R., Hajj, R. M., Cunto, F. J. C., & Castelo Branco, V. T. F.",
-      "venue": "International Journal of Pavement Engineering",
-      "year": "2024",
-      "doi": "https://doi.org/10.1080/10298436.2024.2345138",
+      "title": "Relating weather conditions, drivers' behavior, and tire–pavement friction to the analysis of microscopic simulated vehicular conflicts",
+      "authors": "Santos Maia, R., Lacerda Costa, S., Craveiro Cunto, F. J., & Castelo Branco, V. T. F.",
+      "venue": "Journal of Transportation Engineering, Part B: Pavements",
+      "year": "2021",
+      "doi": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1jSXQO4AAAAJ&citation_for_view=1jSXQO4AAAAJ:W7OEmFMy1HYC",
       "type": "Journal Article",
       "featured": true,
       "order": 1
     },
     {
-      "title": "Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for mechanistic–empirical flexible pavement design in Illinois",
-      "authors": "Santos Maia, R., & Hajj, R.",
-      "venue": "Canadian Journal of Civil Engineering",
+      "title": "Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction",
+      "authors": "Santos Maia, R., Hajj, R. M., Cunto, F. J. C., & Castelo Branco, V. T. F.",
+      "venue": "International Journal of Pavement Engineering",
       "year": "2024",
-      "doi": "https://doi.org/10.1139/cjce-2024-0299",
+      "doi": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1jSXQO4AAAAJ&citation_for_view=1jSXQO4AAAAJ:5nxA0vEk-isC",
       "type": "Journal Article",
       "featured": true,
       "order": 2
@@ -25,80 +25,110 @@
       "authors": "Santos Maia, R., Lu, Y., & Hajj, R. M.",
       "venue": "Case Studies in Construction Materials",
       "year": "2024",
-      "doi": "https://doi.org/10.1016/j.cscm.2024.e03250",
+      "doi": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1jSXQO4AAAAJ&citation_for_view=1jSXQO4AAAAJ:YOwf2qJgpHMC",
       "type": "Journal Article",
-      "featured": false,
+      "featured": true,
       "order": 3
+    },
+    {
+      "title": "Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for mechanistic–empirical flexible pavement design in Illinois",
+      "authors": "Santos Maia, R., & Hajj, R.",
+      "venue": "Canadian Journal of Civil Engineering",
+      "year": "2024",
+      "doi": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=1jSXQO4AAAAJ&sortby=pubdate&citation_for_view=1jSXQO4AAAAJ:kNdYIx-mwKoC",
+      "type": "Journal Article",
+      "featured": true,
+      "order": 4
     },
     {
       "title": "Shape properties validation of virtual 3D particles from AIMS 2D images for railway ballast DEM modeling",
       "authors": "Fernandes Diógenes, D., Santos Maia, R., et al.",
       "venue": "Granular Matter",
       "year": "2025",
-      "doi": "",
+      "doi": "https://doi.org/10.1007/s10035-025-01526-7",
       "type": "Journal Article",
       "featured": false,
-      "order": 4
+      "order": 5
     },
     {
       "title": "Backcalculation of asphalt concrete Poisson's ratio using the ultrasonic pulse velocity test",
       "authors": "Lu, Y., Santos Maia, R., & Hajj, R. M.",
       "venue": "Materials and Structures",
       "year": "2024",
-      "doi": "",
+      "doi": "https://doi.org/10.1617/s11527-024-02486-9",
       "type": "Journal Article",
       "featured": false,
-      "order": 5
+      "order": 6
     },
     {
       "title": "Cracking potential evaluation of recycled asphalt materials using the poker chip test and I–FIT",
       "authors": "Vyas, A., Santos Maia, R., & Hajj, R.",
       "venue": "Road Materials and Pavement Design",
       "year": "2024",
-      "doi": "",
+      "doi": "https://doi.org/10.1080/14680629.2024.2427871",
       "type": "Journal Article",
       "featured": false,
-      "order": 6
+      "order": 7
     },
     {
       "title": "Multiscale evaluation of asphalt binder rejuvenation dosing and efficacy",
       "authors": "Lu, Y., Santos Maia, R., & Hajj, R.",
       "venue": "Construction and Building Materials",
       "year": "2023",
-      "doi": "",
+      "doi": "https://doi.org/10.1016/j.conbuildmat.2023.133813",
       "type": "Journal Article",
       "featured": false,
-      "order": 7
+      "order": 8
     },
     {
       "title": "Emulsion mixtures of fractionated reclaimed asphalt pavement and quarry by-products",
       "authors": "Husain, S. F., Qamhia, I. I., Vyas, A., Santos Maia, R., et al.",
       "venue": "Sustainability",
       "year": "2023",
-      "doi": "",
+      "doi": "https://doi.org/10.3390/su151310735",
       "type": "Journal Article",
       "featured": false,
-      "order": 8
+      "order": 9
     },
     {
       "title": "3D pavement macrotexture parameters from close-range photogrammetry",
       "authors": "Medeiros Jr, M., Santos Maia, R., et al.",
       "venue": "International Journal of Pavement Engineering",
       "year": "2023",
-      "doi": "",
-      "type": "Journal Article",
-      "featured": false,
-      "order": 9
-    },
-    {
-      "title": "Relating weather conditions, drivers' behavior, and tire–pavement friction to microscopic simulated vehicular conflicts",
-      "authors": "Santos Maia, R. et al.",
-      "venue": "Journal of Transportation Engineering, Part B: Pavements",
-      "year": "2021",
-      "doi": "",
+      "doi": "https://doi.org/10.1080/10298436.2021.2020784",
       "type": "Journal Article",
       "featured": false,
       "order": 10
+    },
+    {
+      "title": "The influence of crushing processes and mineralogy of aggregates on their shape properties and susceptibility to degradation",
+      "authors": "Diógenes, L., Santos Maia, R., et al.",
+      "venue": "Construction and Building Materials",
+      "year": "2021",
+      "doi": "https://doi.org/10.1016/j.conbuildmat.2021.122745",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 11
+    },
+    {
+      "title": "Evaluation of the relationships between aggregate shape properties, compaction, mineral skeleton parameters, and texture of airport asphalt pavements",
+      "authors": "Araujo, V. M. de C., Santos Maia, R., et al.",
+      "venue": "TRANSPORTES",
+      "year": "2021",
+      "doi": "https://doi.org/10.14295/transportes.v29i1.1875",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 12
+    },
+    {
+      "title": "Study of the separation between runways and taxiways at Brazilian aerodromes – Application to Fortaleza International Airport",
+      "authors": "de Oliveira, F. H. L., Santos Maia, R., et al.",
+      "venue": "TRANSPORTES",
+      "year": "2020",
+      "doi": "https://doi.org/10.14295/transportes.v28i1.1934",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 13
     },
     {
       "title": "Work in Progress: Using AI Tools to Improve Learning in an Asphalt Materials Course",
@@ -108,7 +138,7 @@
       "doi": "https://doi.org/10.18260/1-2-115-58112",
       "type": "Conference Paper",
       "featured": false,
-      "order": 11
+      "order": 14
     },
     {
       "title": "Updates to mechanistic–empirical design inputs for Illinois flexible pavements",
@@ -118,7 +148,7 @@
       "doi": "https://doi.org/10.36501/0197-9191/24-010",
       "type": "Technical Report",
       "featured": false,
-      "order": 12
+      "order": 15
     },
     {
       "title": "Dynamic Modulus Prediction Models for Illinois' Full-Depth Asphalt Pavement M–E Design Considering Modern Materials",
@@ -128,7 +158,7 @@
       "doi": "https://doi.org/10.1007/978-3-031-67252-1_44",
       "type": "Conference Paper",
       "featured": false,
-      "order": 13
+      "order": 16
     },
     {
       "title": "Evaluation of Ballast Aggregate Shape Properties Using Digital Image Processing Techniques",
@@ -138,7 +168,7 @@
       "doi": "https://doi.org/10.1201/9781315100333",
       "type": "Conference Paper",
       "featured": false,
-      "order": 14
+      "order": 17
     }
   ]
 }
