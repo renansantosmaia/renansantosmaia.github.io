@@ -1,22 +1,31 @@
-[
-  {
-    "title": "ADD YOUR PRESENTATION TITLE HERE",
-    "event": "ADD CONFERENCE NAME (e.g. Transportation Research Board Annual Meeting)",
-    "location": "Washington, D.C., USA",
-    "year": "2025",
-    "type": "Oral Presentation",
-    "description": "Add abstract or short description here.",
-    "file": "",
-    "preview": ""
-  },
-  {
-    "title": "ADD YOUR POSTER TITLE HERE",
-    "event": "ADD CONFERENCE NAME",
-    "location": "ADD LOCATION",
-    "year": "2024",
-    "type": "Poster",
-    "description": "Add abstract or short description here.",
-    "file": "",
-    "preview": ""
-  }
-]
+{
+  "conferences": [
+    {
+      "title": "Evaluating the Aging Effect of Fillers and Crumb Rubber on Asphalt Mastic Strength and Ductility Through the Poker Chip Test",
+      "event": "Transportation Research Board (TRB) Annual Meeting",
+      "location": "Washington, D.C., USA",
+      "year": "2026",
+      "type": "Poster",
+      "description": "Co-authored with Bibek Regmi and Ramez Hajj. Assessed poker chip parameters to distinguish between fillers and modifiers in terms of base binders and aging levels of mastics. Crumb rubber showed the best ductility and strongest anti-aging performance.",
+      "order": 1
+    },
+    {
+      "title": "Assessing the Moisture Susceptibility and Aging of Asphalt Mixes with Hydrated Lime Through Realistic Mixture Testing",
+      "event": "Transportation Research Board (TRB) Annual Meeting",
+      "location": "Washington, D.C., USA",
+      "year": "2026",
+      "type": "Poster",
+      "description": "Co-authored with Bibek Regmi and Ramez Hajj. Assessed moisture resistance and aging benefits of hydrated lime using field-representative lab protocols and layered compaction on carbonate aggregates typical for Illinois.",
+      "order": 2
+    },
+    {
+      "title": "Effects of Partial Saturation and Moisture Damage on Immediate Recovery and Healing of Binder Course Asphalt Concrete Mixes",
+      "event": "Transportation Research Board (TRB) Annual Meeting",
+      "location": "Washington, D.C., USA",
+      "year": "2026",
+      "type": "Poster",
+      "description": "Co-authored with Bibek Regmi and Ramez Hajj. Evaluated healing potential of asphalt concrete mixes subjected to fatigue damage and moisture conditioning using adapted AASHTO T321-22 and healing induction protocols.",
+      "order": 3
+    }
+  ]
+}
