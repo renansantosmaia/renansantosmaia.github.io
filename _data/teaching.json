@@ -1,20 +1,77 @@
-[
-  {
-    "role": "Instructor of Record",
-    "code": "CEE 405",
-    "course": "Asphalt Materials",
-    "institution": "University of Illinois Urbana-Champaign",
-    "period": "2024–2025",
-    "summary": "Sole instructor for the undergraduate Asphalt Materials course at UIUC's Grainger College of Engineering. Developed and delivered lectures, laboratory sessions, and design problem modules grounded in real-world DOT datasets and contemporary infrastructure challenges. Emphasized hands-on laboratory experience and project-based learning to build both technical competence and analytical confidence.",
-    "order": 1
-  },
-  {
-    "role": "Teaching Assistant",
-    "code": "CEE 310",
-    "course": "Transportation Engineering",
-    "institution": "University of Illinois Urbana-Champaign",
-    "period": "2022–2023",
-    "summary": "Teaching assistant for the core undergraduate Transportation Engineering course. Led discussion sections, office hours, and laboratory demonstrations. Supported students through analytical problem sets, design exercises, and research-informed case studies connecting course theory to current IDOT and FHWA practice.",
-    "order": 2
-  }
-]
+Copy
+
+{
+  "teaching": [
+    {
+      "role": "Teaching Assistant",
+      "code": "CEE 595",
+      "course": "Transportation Seminar",
+      "professor": "Prof. Imad L. Al-Qadi",
+      "institution": "University of Illinois Urbana-Champaign",
+      "period": "Fall 2023 / Spring 2024",
+      "level": "Graduate",
+      "summary": "Planned and organized the ICT Kent Seminar Series — scheduled and coordinated lectures, managed seminar logistics (in-person and online), tracked attendance, and graded assignments. Seminars recorded and available online.",
+      "links": [
+        {
+          "text": "Fall 2023 Seminars",
+          "url": "https://youtube.com/playlist?list=PLzHPEMKzCp8HYVz0gcaX8DKzgchYGT3fZ&si=kH4MEIV-YUmrF6ks"
+        },
+        {
+          "text": "Spring 2024 Seminars",
+          "url": "https://youtube.com/playlist?list=PLzHPEMKzCp8GvHfzHxRTUuFNk3QjKh4d3&si=IV1mBFCVJROhR5eH"
+        }
+      ],
+      "order": 1
+    },
+    {
+      "role": "Teaching Assistant & Lecturer",
+      "code": "CEE 405",
+      "course": "Asphalt Materials",
+      "professor": "Prof. Ramez M. Hajj",
+      "institution": "University of Illinois Urbana-Champaign",
+      "period": "Fall 2024 / Fall 2025",
+      "level": "Graduate",
+      "summary": "Led instruction of laboratory sections, managed assignments and grading, evaluated exams, held office hours, conducted review sessions, and delivered lectures. Course grounded in real-world DOT datasets and contemporary infrastructure challenges.",
+      "links": [],
+      "order": 2
+    },
+    {
+      "role": "Teaching Assistant & Lecturer",
+      "code": "CEE 310",
+      "course": "Transportation Engineering",
+      "professor": "Prof. Ramez M. Hajj",
+      "institution": "University of Illinois Urbana-Champaign",
+      "period": "Spring 2025 / Fall 2025 / Spring 2026",
+      "level": "Undergraduate",
+      "summary": "Managed assignments and grading, evaluated exams, held office hours, led review sessions, and delivered lectures. Connected course theory to current IDOT and FHWA practice through case studies and applied problem sets.",
+      "links": [],
+      "order": 3
+    },
+    {
+      "role": "Teaching Assistant & Lecturer",
+      "code": "TC0008",
+      "course": "Design and Construction of Airports",
+      "professor": "Prof. Verônica Teixeira Franco Castelo Branco",
+      "institution": "Federal University of Ceará, Brazil",
+      "period": "Spring 2018",
+      "level": "Undergraduate",
+      "summary": "Led instruction of laboratory sections, managed assignments and grading, evaluated exams, held office hours, conducted review sessions, and delivered selected lectures on airport pavement design and construction.",
+      "links": [],
+      "order": 4
+    }
+  ],
+  "credentials": [
+    {
+      "credential": "Graduate Academy for College Teaching",
+      "institution": "Center for Innovation in Teaching & Learning, UIUC",
+      "year": 2025,
+      "description": "Formal training in teaching development, methodologies and practices for higher education."
+    },
+    {
+      "credential": "Graduate Teacher Certificate",
+      "institution": "Center for Innovation in Teaching & Learning, UIUC",
+      "year": 2026,
+      "description": "Credential recognizing formal training and experience in college-level teaching, including instructional development, classroom practice, and reflective use of student feedback."
+    }
+  ]
+}
