@@ -442,23 +442,11 @@ h2.c-head{font-family:var(--display);font-size:clamp(3rem,6vw,6.2rem);font-weigh
 </div></div>
 
 <div class="sw dark" id="teaching"><div class="container">
-  <div class="sh fade-up"><span class="sn lt">04</span><h2 class="st lt">Teaching</h2><div class="ss lt">UIUC · Grainger College<br>of Engineering</div></div>
+  <div class="sh fade-up"><span class="sn lt">04</span><h2 class="st lt">Teaching</h2><div class="ss lt">UIUC · Federal Univ. Ceará<br>Graduate & Undergraduate</div></div>
   <div class="sr lt"></div>
   <p class="teaching-intro fade-up">Teaching has sharpened my ability to communicate across expertise levels, mentor with patience, and build analytical confidence in others — skills I consider as essential to engineering practice as any technical method.</p>
-  <div class="teaching-grid">
-    <div class="tc fade-up">
-      <div class="tc-role">Instructor of Record</div><div class="tc-code">405</div>
-      <h3 class="tc-course">CEE 405 — Asphalt Materials</h3>
-      <div class="tc-inst">University of Illinois Urbana-Champaign · 2024–2025</div>
-      <p class="tc-sum">Sole instructor for the undergraduate Asphalt Materials course at UIUC's Grainger College of Engineering. Developed and delivered lectures, laboratory sessions, and design problem modules grounded in real-world DOT datasets. Emphasized hands-on laboratory experience and project-based learning to build technical competence and analytical confidence.</p>
-    </div>
-    <div class="tc fade-up">
-      <div class="tc-role">Teaching Assistant</div><div class="tc-code">310</div>
-      <h3 class="tc-course">CEE 310 — Transportation Engineering</h3>
-      <div class="tc-inst">University of Illinois Urbana-Champaign · 2022–2023</div>
-      <p class="tc-sum">Led discussion sections, office hours, and laboratory demonstrations for the core undergraduate Transportation Engineering course. Supported students through analytical problem sets, design exercises, and case studies connecting course theory to current IDOT and FHWA practice.</p>
-    </div>
-  </div>
+  <div class="teaching-grid" id="teaching-grid"></div>
+  <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(157,124,26,0.2);"><h3 style="font-family:var(--display);font-size:1.35rem;font-weight:700;color:var(--white);margin-bottom:1.5rem;text-transform:uppercase;">Credentials</h3><div id="teaching-creds" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;"></div></div>
 </div></div>
 
 <div class="pq-wrap"><div class="pq fade-up">
@@ -590,7 +578,31 @@ h2.c-head{font-family:var(--display);font-size:clamp(3rem,6vw,6.2rem);font-weigh
     });
   }).catch(e=>console.log('Publications data not found',e));
   
-  if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
-</script>
+  // Load teaching from JSON
+  fetch('/_data/teaching.json').then(r=>r.json()).then(data=>{
+    const grid=document.getElementById('teaching-grid');
+    const creds=document.getElementById('teaching-creds');
+    if(!grid||!data.teaching)return;
+    grid.innerHTML='';
+    data.teaching.forEach(t=>{
+      const card=document.createElement('div');
+      card.className='tc fade-up';
+      const links=t.links && t.links.length>0?`<div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,0.1);">${t.links.map(l=>`<a href="${l.url}" target="_blank" style="display:inline-block;color:var(--gold-lt);font-family:var(--mono);font-size:0.75rem;text-decoration:underline;margin-right:1rem;margin-bottom:0.5rem;">${l.text}</a>`).join('')}</div>`:'';
+      card.innerHTML=`<div class="tc-role">${t.role}</div><div class="tc-code">${t.code}</div><h3 class="tc-course">${t.course}</h3><div class="tc-inst">${t.institution} · ${t.period}</div><div style="font-family:var(--mono);font-size:0.57rem;color:rgba(255,255,255,0.25);margin:0.5rem 0;text-transform:uppercase;">${t.level}</div><p class="tc-sum">${t.summary}</p>${t.professor?`<div style="font-family:var(--serif);font-size:0.82rem;color:rgba(255,255,255,0.4);margin-top:0.8rem;font-style:italic;">${t.professor}</div>`:''} ${links}`;
+      grid.appendChild(card);
+      obs.observe(card);
+    });
+    if(creds&&data.credentials){
+      creds.innerHTML='';
+      data.credentials.forEach(c=>{
+        const ccard=document.createElement('div');
+        ccard.className='fade-up';
+        ccard.style.cssText='background:rgba(255,255,255,0.05);border:1px solid rgba(157,124,26,0.2);padding:1.5rem;border-radius:4px;';
+        ccard.innerHTML=`<div style="font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:0.4rem;font-weight:500;">${c.credential}</div><div style="font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:0.3rem;">${c.institution}</div><div style="font-family:var(--mono);font-size:0.57rem;color:rgba(255,255,255,0.4);">${c.year}</div><p style="font-size:0.81rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-top:0.7rem;">${c.description}</p>`;
+        creds.appendChild(ccard);
+        obs.observe(ccard);
+      });
+    }
+  }).catch(e=>console.log('Teaching data not found',e));</script>
 </body>
 </html>
