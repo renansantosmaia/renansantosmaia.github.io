@@ -1,92 +1,144 @@
-[
-  {
-    "title": "Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction",
-    "authors": "Santos Maia, R., Hajj, R. M., Cunto, F. J. C., & Castelo Branco, V. T. F.",
-    "venue": "International Journal of Pavement Engineering",
-    "year": "2024",
-    "doi": "https://doi.org/10.1080/10298436.2024.2345138",
-    "type": "Journal Article",
-    "featured": true
-  },
-  {
-    "title": "Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for mechanistic–empirical flexible pavement design in the State of Illinois",
-    "authors": "Santos Maia, R., & Hajj, R.",
-    "venue": "Canadian Journal of Civil Engineering, 51(7), 645–658",
-    "year": "2024",
-    "doi": "https://doi.org/10.1139/cjce-2024-0299",
-    "type": "Journal Article",
-    "featured": true
-  },
-  {
-    "title": "Porous asphalt mixture performance in cold regions: Case study of Chicago",
-    "authors": "Santos Maia, R., Lu, Y., & Hajj, R. M.",
-    "venue": "Case Studies in Construction Materials, 20, e03250",
-    "year": "2024",
-    "doi": "https://doi.org/10.1016/j.cscm.2024.e03250",
-    "type": "Journal Article",
-    "featured": true
-  },
-  {
-    "title": "Shape properties validation of virtual 3D particles created from AIMS 2D images for railway ballast DEM modeling",
-    "authors": "Fernandes Diógenes, D., Santos Maia, R., et al.",
-    "venue": "Granular Matter, 27(3), 48",
-    "year": "2025",
-    "doi": "https://doi.org/10.1007/s10035-025-01526-7",
-    "type": "Journal Article",
-    "featured": false
-  },
-  {
-    "title": "Backcalculation of asphalt concrete Poisson's ratio using the ultrasonic pulse velocity test",
-    "authors": "Lu, Y., Santos Maia, R., & Hajj, R. M.",
-    "venue": "Materials and Structures, 57(9), 202",
-    "year": "2024",
-    "doi": "https://doi.org/10.1617/s11527-024-02486-9",
-    "type": "Journal Article",
-    "featured": false
-  },
-  {
-    "title": "Cracking potential evaluation of recycled asphalt materials using the poker chip test and I–FIT",
-    "authors": "Vyas, A., Santos Maia, R., & Hajj, R.",
-    "venue": "Road Materials and Pavement Design, 25(6), 1225–1249",
-    "year": "2024",
-    "doi": "https://doi.org/10.1080/14680629.2024.2427871",
-    "type": "Journal Article",
-    "featured": false
-  },
-  {
-    "title": "Multiscale evaluation of asphalt binder rejuvenation dosing and efficacy",
-    "authors": "Lu, Y., Santos Maia, R., & Hajj, R.",
-    "venue": "Construction and Building Materials, 408, 133813",
-    "year": "2023",
-    "doi": "https://doi.org/10.1016/j.conbuildmat.2023.133813",
-    "type": "Journal Article",
-    "featured": false
-  },
-  {
-    "title": "Emulsion mixtures of fractionated reclaimed asphalt pavement and quarry by-products: A laboratory evaluation",
-    "authors": "Husain, S. F., Qamhia, I. I., Vyas, A., Santos Maia, R., Tutumluer, E., & Hajj, R.",
-    "venue": "Sustainability, 15(13), 10735",
-    "year": "2023",
-    "doi": "https://doi.org/10.3390/su151310735",
-    "type": "Journal Article",
-    "featured": false
-  },
-  {
-    "title": "3D pavement macrotexture parameters from close-range photogrammetry",
-    "authors": "Medeiros Jr, M., Babadopulos, L., Santos Maia, R., & Castelo Branco, V.",
-    "venue": "International Journal of Pavement Engineering, 24(2), 2020784",
-    "year": "2023",
-    "doi": "https://doi.org/10.1080/10298436.2021.2020784",
-    "type": "Journal Article",
-    "featured": false
-  },
-  {
-    "title": "Relating weather conditions, drivers' behavior, and tire–pavement friction to the analysis of microscopic simulated vehicular conflicts",
-    "authors": "Santos Maia, R., Lacerda Costa, S., Craveiro Cunto, F. J., & Castelo Branco, V. T. F.",
-    "venue": "Journal of Transportation Engineering, Part B: Pavements, 147(3), 04021037",
-    "year": "2021",
-    "doi": "https://doi.org/10.1061/JPEODX.0000293",
-    "type": "Journal Article",
-    "featured": true
-  }
-]
+{
+  "publications": [
+    {
+      "title": "Safety-oriented urban pavement design and evaluation: integrating microscopic simulation and tyre–pavement friction",
+      "authors": "Santos Maia, R., Hajj, R. M., Cunto, F. J. C., & Castelo Branco, V. T. F.",
+      "venue": "International Journal of Pavement Engineering",
+      "year": "2024",
+      "doi": "https://doi.org/10.1080/10298436.2024.2345138",
+      "type": "Journal Article",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "title": "Laboratory and field evaluation of asphalt concrete modulus and critical strain inputs for mechanistic–empirical flexible pavement design in Illinois",
+      "authors": "Santos Maia, R., & Hajj, R.",
+      "venue": "Canadian Journal of Civil Engineering",
+      "year": "2024",
+      "doi": "https://doi.org/10.1139/cjce-2024-0299",
+      "type": "Journal Article",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "title": "Porous asphalt mixture performance in cold regions: Case study of Chicago",
+      "authors": "Santos Maia, R., Lu, Y., & Hajj, R. M.",
+      "venue": "Case Studies in Construction Materials",
+      "year": "2024",
+      "doi": "https://doi.org/10.1016/j.cscm.2024.e03250",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 3
+    },
+    {
+      "title": "Shape properties validation of virtual 3D particles from AIMS 2D images for railway ballast DEM modeling",
+      "authors": "Fernandes Diógenes, D., Santos Maia, R., et al.",
+      "venue": "Granular Matter",
+      "year": "2025",
+      "doi": "",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 4
+    },
+    {
+      "title": "Backcalculation of asphalt concrete Poisson's ratio using the ultrasonic pulse velocity test",
+      "authors": "Lu, Y., Santos Maia, R., & Hajj, R. M.",
+      "venue": "Materials and Structures",
+      "year": "2024",
+      "doi": "",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 5
+    },
+    {
+      "title": "Cracking potential evaluation of recycled asphalt materials using the poker chip test and I–FIT",
+      "authors": "Vyas, A., Santos Maia, R., & Hajj, R.",
+      "venue": "Road Materials and Pavement Design",
+      "year": "2024",
+      "doi": "",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 6
+    },
+    {
+      "title": "Multiscale evaluation of asphalt binder rejuvenation dosing and efficacy",
+      "authors": "Lu, Y., Santos Maia, R., & Hajj, R.",
+      "venue": "Construction and Building Materials",
+      "year": "2023",
+      "doi": "",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 7
+    },
+    {
+      "title": "Emulsion mixtures of fractionated reclaimed asphalt pavement and quarry by-products",
+      "authors": "Husain, S. F., Qamhia, I. I., Vyas, A., Santos Maia, R., et al.",
+      "venue": "Sustainability",
+      "year": "2023",
+      "doi": "",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 8
+    },
+    {
+      "title": "3D pavement macrotexture parameters from close-range photogrammetry",
+      "authors": "Medeiros Jr, M., Santos Maia, R., et al.",
+      "venue": "International Journal of Pavement Engineering",
+      "year": "2023",
+      "doi": "",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 9
+    },
+    {
+      "title": "Relating weather conditions, drivers' behavior, and tire–pavement friction to microscopic simulated vehicular conflicts",
+      "authors": "Santos Maia, R. et al.",
+      "venue": "Journal of Transportation Engineering, Part B: Pavements",
+      "year": "2021",
+      "doi": "",
+      "type": "Journal Article",
+      "featured": false,
+      "order": 10
+    },
+    {
+      "title": "Work in Progress: Using AI Tools to Improve Learning in an Asphalt Materials Course",
+      "authors": "Santos Maia, R., & Hajj, R.",
+      "venue": "2026 ASEE IL/IN Sectional Conference, Valparaiso University, Indiana",
+      "year": "2026",
+      "doi": "https://doi.org/10.18260/1-2-115-58112",
+      "type": "Conference Paper",
+      "featured": false,
+      "order": 11
+    },
+    {
+      "title": "Updates to mechanistic–empirical design inputs for Illinois flexible pavements",
+      "authors": "Hajj, R., Thompson, M., Santos Maia, R., Lu, Y., Vyas, A., Asadi, B., & Regmi, B.",
+      "venue": "Illinois Center for Transportation Research Report FHWA–ICT–24–008",
+      "year": "2024",
+      "doi": "https://doi.org/10.36501/0197-9191/24-010",
+      "type": "Technical Report",
+      "featured": false,
+      "order": 12
+    },
+    {
+      "title": "Dynamic Modulus Prediction Models for Illinois' Full-Depth Asphalt Pavement M–E Design Considering Modern Materials",
+      "authors": "Santos Maia, R., Asadi, B., Vyas, A., Lu, Y., Thompson, M., & Hajj, R.",
+      "venue": "Proceedings of the 14th International Conference on Asphalt Pavements (ISAP 2024)",
+      "year": "2024",
+      "doi": "https://doi.org/10.1007/978-3-031-67252-1_44",
+      "type": "Conference Paper",
+      "featured": false,
+      "order": 13
+    },
+    {
+      "title": "Evaluation of Ballast Aggregate Shape Properties Using Digital Image Processing Techniques",
+      "authors": "Diógenes, D., Santos Maia, R., & Castelo Branco, V. T. F.",
+      "venue": "Proceedings of the 10th International Conference on the Bearing Capacity of Roads, Railways and Airfields (BCRRA 2017)",
+      "year": "2017",
+      "doi": "https://doi.org/10.1201/9781315100333",
+      "type": "Conference Paper",
+      "featured": false,
+      "order": 14
+    }
+  ]
+}
