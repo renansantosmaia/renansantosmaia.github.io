@@ -1,82 +1,125 @@
-[
-  {
-    "title": "Illinois Flexible Pavement Design & Monitoring",
-    "client": "Illinois Department of Transportation (IDOT) · ICT R27-267",
-    "period": "2025–Present",
-    "type": "Structural Evaluation · Network-Scale · Field & Lab",
-    "summary": "Advancing network-level pavement integrity studies for Illinois by synthesizing structural performance data from over 20 years of extended-life (perpetual) pavement sections. Integrates FWD and Traffic Speed Deflectometer (TSD) measurements with laboratory analysis of field-extracted cores to evaluate the modulus-fatigue relationship between damaged and undamaged asphalt concrete. Frames outcomes within Remaining Service Life (RSL) concepts, accounting for evolving material technologies, environmental stressors, and modern mobility patterns.",
-    "outcomes": [
-      "Network-scale FWD and TSD data collection and backcalculation program",
-      "Laboratory fatigue and modulus characterization of field cores from long-term pavement sections",
-      "RSL-based framework connecting lab material behavior to field structural performance trajectories",
-      "Deliverables directly informing IDOT extended-life pavement design and preservation guidelines"
-    ],
-    "tags": ["MEPDG", "FWD", "TSD", "Perpetual Pavements", "RSL", "Fatigue", "Field Evaluation"],
-    "image": "",
-    "order": 1
-  },
-  {
-    "title": "Development of a Pavement Friction Management Program",
-    "client": "Illinois Department of Transportation (IDOT) · ICT R27-264",
-    "period": "2023–Present",
-    "type": "Surface Functionality · Traffic Safety · Field & Lab",
-    "summary": "Developing a statewide pavement friction management framework for IDOT. Leads the aggregate characterization task: quantifying morphology via AIMS and assessing degradation resistance through Micro-Deval to identify priority aggregate sources and optimal gradation bands for surface mixtures and chip seals. Outcomes feed an optimization framework for crash-risk thresholds and resurfacing prioritization, directly connecting pavement engineering to road safety policy.",
-    "outcomes": [
-      "AIMS-based aggregate morphology database for Illinois surface mix and chip seal sources",
-      "Micro-Deval degradation thresholds for friction-critical aggregate selection",
-      "Crash-risk threshold framework linking surface friction to safety outcomes",
-      "Network-level resurfacing prioritization model for IDOT"
-    ],
-    "tags": ["Friction Management", "AIMS", "Micro-Deval", "Traffic Safety", "Chip Seal", "Network Management"],
-    "image": "",
-    "order": 2
-  },
-  {
-    "title": "Mechanistic-Empirical Design Procedures for Flexible Pavements",
-    "client": "Illinois Department of Transportation (IDOT) · ICT R27-233",
-    "period": "2021–2024",
-    "type": "Pavement Design · Lab Characterization · Modeling",
-    "summary": "Co-developed multiscale mechanistic-empirical (ME) design inputs for Illinois flexible pavements. Comprehensive effort covering dynamic modulus characterization, fatigue and fracture testing, and deployment of Bayesian neural network models to replace outdated modulus prediction algorithms in standard pavement design software. Results published in the Canadian Journal of Civil Engineering (2024) and delivered as formal IDOT technical reports.",
-    "outcomes": [
-      "Dynamic modulus and phase angle master curves for Illinois asphalt concrete mixes",
-      "Fatigue and fracture characterization (I-FIT, beam fatigue) for design input calibration",
-      "Bayesian neural network model for modulus prediction — improving on existing MEPDG algorithms",
-      "Published: Canadian Journal of Civil Engineering, 51(7), 645–658 (2024)"
-    ],
-    "tags": ["MEPDG", "Dynamic Modulus", "Fatigue", "I-FIT", "Bayesian Modeling", "Flexible Pavements"],
-    "image": "",
-    "order": 3
-  },
-  {
-    "title": "Porous Asphalt Mixtures for the Southern Lake Michigan Pavements",
-    "client": "IL-IN Sea Grant · UIUC",
-    "period": "2022–2023",
-    "type": "Sustainable Design · Cold-Region Performance · Lab",
-    "summary": "Laboratory research program evaluating porous asphalt mixture performance under cold-region conditions representative of the Chicago metropolitan area. Addressed mix design optimization, durability under freeze-thaw cycling, permeability, and rutting resistance — providing a technical basis for permeable pavement implementation in the Great Lakes region for stormwater management and water quality improvement.",
-    "outcomes": [
-      "Mix design recommendations for cold-region porous asphalt balancing permeability and structural performance",
-      "Freeze-thaw durability assessment of candidate mixture designs",
-      "Stormwater and environmental benefit documentation for municipal planning context",
-      "Published: Case Studies in Construction Materials, 20, e03250 (2024)"
-    ],
-    "tags": ["Porous Asphalt", "Permeable Pavement", "Stormwater", "Cold Region", "Sustainability", "Chicago"],
-    "image": "",
-    "order": 4
-  },
-  {
-    "title": "Tire-Pavement Friction & Traffic Safety — Urban Pavement Design",
-    "client": "Federal University of Ceará · CNPq",
-    "period": "2018–2022",
-    "type": "Traffic Safety · Microscopic Simulation · M.Sc. Research",
-    "summary": "Developed a framework connecting pavement surface texture and tire-pavement friction to traffic safety outcomes in urban environments. Integrated microscopic traffic simulation (VISSIM), weather-dependent vehicle behavior modeling, and field-derived friction thresholds to quantify vehicular conflict risk. Demonstrated that low-cost aggregate-level surface decisions can reduce public health burden through safer transportation infrastructure.",
-    "outcomes": [
-      "Friction-safety integration framework connecting field texture and friction data to simulated vehicular conflicts",
-      "Weather and driver behavior co-modeling for friction-threshold safety analysis",
-      "Published: International Journal of Pavement Engineering (2024); Journal of Transportation Engineering Part B (2021)",
-      "M.Sc. thesis: Tire-Pavement Friction Characterization from the Traffic Safety Perspective"
-    ],
-    "tags": ["Friction", "Traffic Safety", "VISSIM", "SSAM", "Urban Pavements", "Microscopic Simulation"],
-    "image": "",
-    "order": 5
-  }
-]
+{
+  "projects": [
+    {
+      "title": "Illinois Flexible Pavement Design and Monitoring",
+      "client": "Illinois Department of Transportation (Project R27-267)",
+      "period": "2025–Present",
+      "type": "Structural Evaluation · Network-Scale",
+      "summary": "Current project focused on updating IDOT's pavement design procedures by reviewing 20+ years of extended-life projects, and evaluating emerging factors such as climate change, truck platooning, and increased axle loads. This project encompasses field and laboratory analysis of AC mixes used for perpetual pavement configurations, including fracture and fatigue tests, network-level evaluation using Traffic Speed Deflectometer, characterization of multiscale mechanical responses under realistic testing configurations (waveforms and compaction conditions), elastic recovery and long-term healing potential, as well as the effect of saturation on moisture-damage potential.",
+      "outcomes": [
+        "Field and laboratory analysis of extended-life pavement sections (20+ years of data)",
+        "Traffic Speed Deflectometer (TSD) and FWD network-level evaluation",
+        "Multiscale mechanical response characterization under realistic conditions",
+        "Elastic recovery and long-term healing potential assessment",
+        "Updated design procedures for IDOT perpetual pavement guidelines"
+      ],
+      "tags": ["IDOT", "MEPDG", "Extended-Life Pavements", "FWD", "TSD", "Perpetual Pavements"],
+      "featured": true,
+      "order": 1
+    },
+    {
+      "title": "Development of a Pavement Friction Management Program",
+      "client": "Illinois Department of Transportation (Project R27-264)",
+      "period": "2023–Present",
+      "type": "Surface Functionality · Traffic Safety",
+      "summary": "Project focused on the development of a Pavement Friction Management Program for the Illinois Department of Transportation, contributing to the creation of a statewide friction management system. Part of the research scope involves analyzing aggregate characteristics to be incorporated into the tool, specially in terms of morphology properties and susceptibility to degradation in order to support treatment selection decisions towards a vision-zero perspective of roadway safety. Collaboration with IDOT, UIUC Illinois Center for Transportation, Rutgers University, and Arora & Associates.",
+      "outcomes": [
+        "Aggregate characterization via AIMS (morphology) and Micro-Deval (degradation)",
+        "AIMS-based aggregate morphology database for Illinois surface mix sources",
+        "Friction thresholds and treatment selection framework",
+        "Statewide friction management system supporting vision-zero safety goals",
+        "Technical reports and decision-support tool for IDOT"
+      ],
+      "tags": ["IDOT", "Friction Management", "AIMS", "Micro-Deval", "Traffic Safety", "Vision Zero"],
+      "featured": true,
+      "order": 2
+    },
+    {
+      "title": "Mechanistic-Empirical Design Procedures for Flexible Pavements",
+      "client": "Illinois Department of Transportation (Project R27-233)",
+      "period": "2021–2024",
+      "type": "Pavement Design · Lab Characterization · Modeling",
+      "summary": "Project focused on field and laboratory evaluation of asphalt concrete (AC) mixes for perpetual flexible pavements in light of recent advancements in asphalt technology, mainly the use of recycled materials and modified binders. The project combined multiscale laboratory testing with different modeling strategies, validating the use of a Bayesian neural network as an appropriate predictor of current Illinois' AC mixes modulus for pavement design purposes. Non-destructive approaches, including ultrasonic pulse velocity testing and field modulus measurements, were also explored. Additionally, limiting tensile strain criteria for extended-life performance were examined through four-point bending fatigue protocols.",
+      "outcomes": [
+        "Dynamic modulus master curves for Illinois asphalt concrete mixes",
+        "Bayesian neural network model for improved modulus prediction (outperforms traditional algorithms)",
+        "Ultrasonic pulse velocity (UPV) non-destructive screening method validation",
+        "Four-point bending fatigue characterization for design input calibration",
+        "Updated fatigue endurance limit (FEL) criteria for extended-life pavements",
+        "Published: Canadian J. Civil Engineering (2024)"
+      ],
+      "tags": ["IDOT", "MEPDG", "Dynamic Modulus", "Fatigue", "Neural Networks", "Non-Destructive Testing"],
+      "featured": true,
+      "order": 3
+    },
+    {
+      "title": "Development of Porous Asphalt Mixtures for Southern Lake Michigan Flexible Pavements",
+      "client": "Illinois–Indiana Sea Grant",
+      "period": "2022–2023",
+      "type": "Sustainable Design · Cold-Region Performance",
+      "summary": "Project focused on resilience strategies for coastal areas of the Lake Michigan region. Evaluation of the long-term performance in the field of porous asphalt mixtures in the city of Chicago, covering aspects such as surface texture evolution, binder aging, internal structure by means of CT-scanning, and viscoelastic response under freeze–thaw cycles and saturation conditions. Collaboration with IISG, UIUC, Illinois Center for Transportation, Chicago Department of Transportation (CDOT), and S.T.A.T.E. Testing, LLC.",
+      "outcomes": [
+        "Field performance evaluation of porous asphalt from seven Chicago roadway sections",
+        "Surface texture evolution and raveling analysis over time",
+        "Binder aging assessment and ductility characterization at depth",
+        "CT scanning characterization of internal structure and air void distribution",
+        "Saturation sensitivity and freeze-thaw durability testing",
+        "Design recommendations for cold-region porous asphalt in coastal zones",
+        "Published: Case Studies in Construction Materials (2024)"
+      ],
+      "tags": ["Porous Asphalt", "Stormwater", "Cold Region", "Sustainability", "Chicago", "Freeze-Thaw"],
+      "featured": false,
+      "order": 4
+    },
+    {
+      "title": "3DTrans Project: Urban Transport Systems (Air Pollution, Road Safety, Social Vulnerability)",
+      "client": "Federal University of Ceará, Brazil (CNPq Funded)",
+      "period": "2025–Present",
+      "type": "Urban Sustainability · Multi-disciplinary",
+      "summary": "National research project in Brazil addressing urban transport sustainability by investigating the relationship between urban roads' infrastructure, vehicle emissions, traffic safety, and social impacts. The scope of the project integrates traditional and innovative concepts (such as portable measuring devices for emissions and driving patterns) in infrastructure to the proposition of 'green routes', aligned with UN Agenda 2030 (Goals 9, 11, 13). Multidisciplinary collaboration with 20+ research collaborators worldwide.",
+      "outcomes": [
+        "Investigation of roadway condition (IRI) and vehicle emissions relationships",
+        "Assessment of pavement geometry, friction, and surface texture on safety",
+        "Analysis of roadway condition impact on vulnerable urban communities",
+        "Green route design methodology aligned with UN SDG 9, 11, 13",
+        "Sustainable urban transport framework"
+      ],
+      "tags": ["Urban Sustainability", "Emissions", "Traffic Safety", "Social Impact", "UN Agenda 2030"],
+      "featured": false,
+      "order": 5
+    },
+    {
+      "title": "Analysis of Atmospheric Pollutant Concentrations from Asphalt Paving Services",
+      "client": "Federal University of Ceará, Brazil (FUNCAP Funded)",
+      "period": "2019–2020",
+      "type": "Environmental Impact · Construction Sustainability",
+      "summary": "National research project in Brazil evaluating pollutant emissions from asphalt paving services in urban environments. Focused on diagnosing environmental and public health impacts of pavement construction stages and developing sustainable methodologies to mitigate them. This project consolidated the research area on material characterization and sustainability in pavement engineering of the Graduate Program in Transportation Engineering at the Federal University of Ceará.",
+      "outcomes": [
+        "Environmental and public health impact assessment of paving operations",
+        "Pollutant emission characterization from asphalt construction",
+        "Sustainable mitigation methodologies for construction stages",
+        "Consolidated sustainability research area in transportation engineering"
+      ],
+      "tags": ["Environmental Impact", "Construction Sustainability", "Air Quality", "Public Health"],
+      "featured": false,
+      "order": 6
+    },
+    {
+      "title": "Evaluation of Aggregate Shape Properties: Crushing, Mineralogy, and Degradation",
+      "client": "Federal University of Ceará, Brazil (CNPq Funded)",
+      "period": "2018–2022",
+      "type": "Material Characterization · Digital Image Processing",
+      "summary": "Project investigating how mineralogy, crushing processes, and degradation affect aggregate morphology. Applied digital image processing (AIMS – Aggregate Image Measurement System) to characterize shape, angularity, and surface texture, supporting improved selection and use of aggregates in infrastructure applications.",
+      "outcomes": [
+        "AIMS-based characterization of aggregate shape, angularity, and surface texture",
+        "Assessment of mineralogy effects on aggregate morphology",
+        "Evaluation of crushing process impacts on shape properties",
+        "Degradation analysis and classification framework",
+        "Improved aggregate selection methodology for infrastructure"
+      ],
+      "tags": ["Aggregate Characterization", "AIMS", "Digital Image Processing", "Material Science"],
+      "featured": false,
+      "order": 7
+    }
+  ]
+}
